@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>무릎 3D 설명판</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="c"></canvas>
+
+    <header class="top">
+      <div class="brand">무릎 <span>3D 설명판</span></div>
+      <div class="views">
+        <button data-view="front">앞</button>
+        <button data-view="medial">안쪽</button>
+        <button data-view="lateral">바깥쪽</button>
+        <button data-view="back">뒤</button>
+        <button data-view="top">위</button>
+      </div>
+      <div class="right">
+        <button id="termToggle" class="pill">쉬운 말</button>
+        <button id="resetBtn" class="pill">처음으로</button>
+      </div>
+    </header>
+
+    <aside class="presets">
+      <div class="label">질환으로 보기</div>
+      <div id="presetList"></div>
+    </aside>
+
+    <section id="info" class="info hidden">
+      <button class="close" id="infoClose" aria-label="닫기">×</button>
+      <h2 id="infoTitle"></h2>
+      <div id="infoSub" class="sub"></div>
+      <p id="infoDesc"></p>
+    </section>
+
+    <footer class="layers">
+      <div class="label">어디까지 벗겨볼까요?</div>
+      <div class="seg" id="stageSeg">
+        <button data-stage="0">피부</button>
+        <button data-stage="1">근육</button>
+        <button data-stage="2">인대·연골판</button>
+        <button data-stage="3">뼈</button>
+      </div>
+      <label class="ghost"><input type="checkbox" id="ghostChk" checked /> 벗긴 층 흐리게 남기기</label>
+    </footer>
+
+    <button id="creditBtn" class="credit">출처</button>
+    <div id="credit" class="modal hidden">
+      <div class="modal-body">
+        <h3>3D 모델 출처</h3>
+        <p><b>Z-Anatomy</b> — The libre 3D atlas of anatomy — CC BY-SA 4.0<br>
+          <a href="https://github.com/Z-Anatomy/Models-of-human-anatomy" target="_blank">github.com/Z-Anatomy</a></p>
+        <p><b>BodyParts3D</b>, © The Database Center for Life Science — CC BY-SA 2.1 Japan<br>
+          <a href="https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html" target="_blank">dbarchive.biosciencedbc.jp</a></p>
+        <p>이 앱의 무릎 모델(knee.glb)은 위 원본에서 무릎 부위만 잘라내고 압축한 수정본이며, 같은 CC BY-SA 4.0 라이선스로 공개합니다.</p>
+        <button id="creditClose" class="pill">닫기</button>
+      </div>
+    </div>
+
+    <div id="loading" class="loading">모델 불러오는 중…</div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

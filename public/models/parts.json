@@ -1,0 +1,505 @@
+[
+ {
+  "id": "Femur",
+  "en": "Femur",
+  "layer": "bone",
+  "easy": "허벅지뼈",
+  "ko": "대퇴골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Tibia",
+  "en": "Tibia",
+  "layer": "bone",
+  "easy": "정강이뼈",
+  "ko": "경골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Fibula",
+  "en": "Fibula",
+  "layer": "bone",
+  "easy": "종아리뼈",
+  "ko": "비골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Patella",
+  "en": "Patella",
+  "layer": "bone",
+  "easy": "무릎뼈(슬개골)",
+  "ko": "슬개골",
+  "materials": [
+   "Bone-1",
+   "Cartilage",
+   "Bone-2",
+   "Bone-3",
+   "Bone-4",
+   "Bone-5",
+   "Bone-6",
+   "Bone-7",
+   "Bone-8"
+  ]
+ },
+ {
+  "id": "Anterior_cruciate_ligament",
+  "en": "Anterior cruciate ligament",
+  "layer": "ligament",
+  "easy": "앞 십자인대",
+  "ko": "전방십자인대(ACL)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Posterior_cruciate_ligament",
+  "en": "Posterior cruciate ligament",
+  "layer": "ligament",
+  "easy": "뒤 십자인대",
+  "ko": "후방십자인대(PCL)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Superficial_part_of_tibial_collateral_ligament",
+  "en": "Superficial part of tibial collateral ligament",
+  "layer": "ligament",
+  "easy": "안쪽 인대",
+  "ko": "내측측부인대(MCL) 표층",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Deep_part_of_tibial_collateral_ligament",
+  "en": "Deep part of tibial collateral ligament",
+  "layer": "ligament",
+  "easy": "안쪽 인대(깊은 층)",
+  "ko": "내측측부인대(MCL) 심층",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Fibular_collateral_ligament",
+  "en": "Fibular collateral ligament",
+  "layer": "ligament",
+  "easy": "바깥쪽 인대",
+  "ko": "외측측부인대(LCL)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Medial_meniscus",
+  "en": "Medial meniscus",
+  "layer": "ligament",
+  "easy": "안쪽 연골판",
+  "ko": "내측 반월상연골",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Lateral_meniscus",
+  "en": "Lateral meniscus",
+  "layer": "ligament",
+  "easy": "바깥쪽 연골판",
+  "ko": "외측 반월상연골",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Transverse_ligament_of_knee",
+  "en": "Transverse ligament of knee",
+  "layer": "ligament",
+  "easy": "연골판 연결 인대",
+  "ko": "슬횡인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Oblique_popliteal_ligament",
+  "en": "Oblique popliteal ligament",
+  "layer": "ligament",
+  "easy": "무릎 뒤 인대",
+  "ko": "사슬와인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Arcuate_popliteal_ligament",
+  "en": "Arcuate popliteal ligament",
+  "layer": "ligament",
+  "easy": "무릎 뒤 바깥 인대",
+  "ko": "궁상슬와인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Popliteofibular_ligament",
+  "en": "Popliteofibular ligament",
+  "layer": "ligament",
+  "easy": "무릎 뒤 바깥 인대",
+  "ko": "슬와비골인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Medial_patellar_retinaculum",
+  "en": "Medial patellar retinaculum",
+  "layer": "ligament",
+  "easy": "무릎뼈 안쪽 지지띠",
+  "ko": "내측 슬개지대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Lateral_patellar_retinaculum",
+  "en": "Lateral patellar retinaculum",
+  "layer": "ligament",
+  "easy": "무릎뼈 바깥쪽 지지띠",
+  "ko": "외측 슬개지대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Infrapatellar_fat_pad",
+  "en": "Infrapatellar fat pad",
+  "layer": "ligament",
+  "easy": "무릎뼈 아래 지방",
+  "ko": "슬개하 지방체",
+  "materials": [
+   "Fat"
+  ]
+ },
+ {
+  "id": "Suprapatellar_bursa",
+  "en": "Suprapatellar bursa",
+  "layer": "ligament",
+  "easy": "무릎뼈 위 물주머니",
+  "ko": "슬개상낭",
+  "materials": [
+   "Bursa"
+  ]
+ },
+ {
+  "id": "Subcutaneous_prepatellar_bursa",
+  "en": "Subcutaneous prepatellar bursa",
+  "layer": "ligament",
+  "easy": "무릎뼈 앞 물주머니",
+  "ko": "피하 슬개전낭",
+  "materials": [
+   "Bursa"
+  ]
+ },
+ {
+  "id": "Deep_infrapatellar_bursa",
+  "en": "Deep infrapatellar bursa",
+  "layer": "ligament",
+  "easy": "무릎뼈 아래 물주머니",
+  "ko": "심부 슬개하낭",
+  "materials": [
+   "Bursa"
+  ]
+ },
+ {
+  "id": "Anserine_bursa",
+  "en": "Anserine bursa",
+  "layer": "ligament",
+  "easy": "거위발 물주머니",
+  "ko": "거위발 점액낭(거위발건염 부위)",
+  "materials": [
+   "Bursa"
+  ]
+ },
+ {
+  "id": "Semimembranosus_bursa",
+  "en": "Semimembranosus bursa",
+  "layer": "ligament",
+  "easy": "무릎 뒤 물주머니",
+  "ko": "반막양근 점액낭",
+  "materials": [
+   "Bursa"
+  ]
+ },
+ {
+  "id": "Rectus_femoris_muscle",
+  "en": "Rectus femoris muscle",
+  "layer": "muscle",
+  "easy": "허벅지 앞 근육(가운데)",
+  "ko": "대퇴직근",
+  "materials": [
+   "Biarticular",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Vastus_lateralis_muscle",
+  "en": "Vastus lateralis muscle",
+  "layer": "muscle",
+  "easy": "허벅지 앞 근육(바깥)",
+  "ko": "외측광근",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Vastus_medialis_muscle",
+  "en": "Vastus medialis muscle",
+  "layer": "muscle",
+  "easy": "허벅지 앞 근육(안쪽)",
+  "ko": "내측광근",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Vastus_intermedius_muscle",
+  "en": "Vastus intermedius muscle",
+  "layer": "muscle",
+  "easy": "허벅지 앞 근육(깊은 층)",
+  "ko": "중간광근",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Sartorius_muscle",
+  "en": "Sartorius muscle",
+  "layer": "muscle",
+  "easy": "허벅지 안쪽 긴 근육",
+  "ko": "봉공근",
+  "materials": [
+   "Adductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Gracilis_muscle",
+  "en": "Gracilis muscle",
+  "layer": "muscle",
+  "easy": "허벅지 안쪽 근육",
+  "ko": "박근",
+  "materials": [
+   "Adductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Semitendinosus_muscle",
+  "en": "Semitendinosus muscle",
+  "layer": "muscle",
+  "easy": "허벅지 뒤 근육(안쪽)",
+  "ko": "반건양근",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Semimembranosus_muscle",
+  "en": "Semimembranosus muscle",
+  "layer": "muscle",
+  "easy": "허벅지 뒤 근육(안쪽 깊은 층)",
+  "ko": "반막양근",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Long_head_of_biceps_femoris",
+  "en": "Long head of biceps femoris",
+  "layer": "muscle",
+  "easy": "허벅지 뒤 근육(바깥)",
+  "ko": "대퇴이두근 장두",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Short_head_of_biceps_femoris",
+  "en": "Short head of biceps femoris",
+  "layer": "muscle",
+  "easy": "허벅지 뒤 근육(바깥 깊은 층)",
+  "ko": "대퇴이두근 단두",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Medial_head_of_gastrocnemius",
+  "en": "Medial head of gastrocnemius",
+  "layer": "muscle",
+  "easy": "종아리 근육(안쪽)",
+  "ko": "비복근 내측두",
+  "materials": [
+   "Biarticular",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Lateral_head_of_gastrocnemius",
+  "en": "Lateral head of gastrocnemius",
+  "layer": "muscle",
+  "easy": "종아리 근육(바깥)",
+  "ko": "비복근 외측두",
+  "materials": [
+   "Biarticular",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Popliteus_muscle",
+  "en": "Popliteus muscle",
+  "layer": "muscle",
+  "easy": "무릎 뒤 작은 근육",
+  "ko": "슬와근",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Plantaris_muscle",
+  "en": "Plantaris muscle",
+  "layer": "muscle",
+  "easy": "종아리 가는 근육",
+  "ko": "족저근",
+  "materials": [
+   "Biarticular",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Iliotibial_tract",
+  "en": "Iliotibial tract",
+  "layer": "muscle",
+  "easy": "허벅지 바깥 띠",
+  "ko": "장경인대(장경대)",
+  "materials": [
+   "Trapezius",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Anterior_region_of_thigh",
+  "en": "Anterior region of thigh",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(허벅지 앞)",
+  "materials": [
+   "Skin-1",
+   "Skin-3",
+   "Skin-4",
+   "Skin-5",
+   "Skin-6",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Posterior_region_of_thigh",
+  "en": "Posterior region of thigh",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(허벅지 뒤)",
+  "materials": [
+   "Skin-2",
+   "Skin-3",
+   "Skin-4",
+   "Skin-5",
+   "Skin-6",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Anterior_region_of_knee",
+  "en": "Anterior region of knee",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(무릎 앞)",
+  "materials": [
+   "Skin-1",
+   "Skin-3",
+   "Skin-5",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Posterior_region_of_knee",
+  "en": "Posterior region of knee",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(무릎 뒤)",
+  "materials": [
+   "Skin-2",
+   "Skin-3",
+   "Skin-5",
+   "Skin-6",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Popliteal_fossa",
+  "en": "Popliteal fossa",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(오금)",
+  "materials": [
+   "Skin-1",
+   "Skin-2",
+   "Skin-5",
+   "Skin-6",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Anterior_region_of_leg",
+  "en": "Anterior region of leg",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(종아리 앞)",
+  "materials": [
+   "Skin-2",
+   "Skin-3",
+   "Skin-5",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Posterior_region_of_leg",
+  "en": "Posterior region of leg",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(종아리 뒤)",
+  "materials": [
+   "Skin-3",
+   "Skin-5",
+   "Skin-6",
+   "Skin-in"
+  ]
+ }
+]
