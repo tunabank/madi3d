@@ -5,7 +5,7 @@ import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { PRESETS } from './presets.js';
 
 const BASE = import.meta.env.BASE_URL;
-const LAYERS = ['skin', 'muscle', 'ligament', 'bone']; // 바깥 → 안
+const LAYERS = ['skin', 'muscle_sup', 'muscle_deep', 'ligament', 'bone']; // 바깥 → 안
 const HI_COLOR = new THREE.Color(0xef4444);
 const SEL_COLOR = new THREE.Color(0xf59e0b);
 const GRAY = new THREE.Color(0x8a9099);
@@ -57,7 +57,8 @@ function baseColor(layer, mat) {
   if (mat === 'Bursa') return 0xb79ad6;
   if (mat === 'Fat') return 0xf0cf6a;
   if (/^Skin/.test(mat)) return 0xe3ad8f;
-  if (layer === 'muscle') return 0xb4483f;
+  if (layer === 'muscle_sup') return 0xb4483f;
+  if (layer === 'muscle_deep') return 0x9a3a4a; // 속근육은 약간 짙은 색
   return 0xcccccc;
 }
 

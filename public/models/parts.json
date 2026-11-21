@@ -243,7 +243,7 @@
  {
   "id": "Rectus_femoris_muscle",
   "en": "Rectus femoris muscle",
-  "layer": "muscle",
+  "layer": "muscle_sup",
   "easy": "허벅지 앞 근육(가운데)",
   "ko": "대퇴직근",
   "materials": [
@@ -254,7 +254,7 @@
  {
   "id": "Vastus_lateralis_muscle",
   "en": "Vastus lateralis muscle",
-  "layer": "muscle",
+  "layer": "muscle_sup",
   "easy": "허벅지 앞 근육(바깥)",
   "ko": "외측광근",
   "materials": [
@@ -265,7 +265,7 @@
  {
   "id": "Vastus_medialis_muscle",
   "en": "Vastus medialis muscle",
-  "layer": "muscle",
+  "layer": "muscle_sup",
   "easy": "허벅지 앞 근육(안쪽)",
   "ko": "내측광근",
   "materials": [
@@ -276,7 +276,7 @@
  {
   "id": "Vastus_intermedius_muscle",
   "en": "Vastus intermedius muscle",
-  "layer": "muscle",
+  "layer": "muscle_deep",
   "easy": "허벅지 앞 근육(깊은 층)",
   "ko": "중간광근",
   "materials": [
@@ -287,7 +287,7 @@
  {
   "id": "Sartorius_muscle",
   "en": "Sartorius muscle",
-  "layer": "muscle",
+  "layer": "muscle_sup",
   "easy": "허벅지 안쪽 긴 근육",
   "ko": "봉공근",
   "materials": [
@@ -298,7 +298,7 @@
  {
   "id": "Gracilis_muscle",
   "en": "Gracilis muscle",
-  "layer": "muscle",
+  "layer": "muscle_sup",
   "easy": "허벅지 안쪽 근육",
   "ko": "박근",
   "materials": [
@@ -309,7 +309,7 @@
  {
   "id": "Semitendinosus_muscle",
   "en": "Semitendinosus muscle",
-  "layer": "muscle",
+  "layer": "muscle_sup",
   "easy": "허벅지 뒤 근육(안쪽)",
   "ko": "반건양근",
   "materials": [
@@ -320,7 +320,7 @@
  {
   "id": "Semimembranosus_muscle",
   "en": "Semimembranosus muscle",
-  "layer": "muscle",
+  "layer": "muscle_deep",
   "easy": "허벅지 뒤 근육(안쪽 깊은 층)",
   "ko": "반막양근",
   "materials": [
@@ -331,7 +331,7 @@
  {
   "id": "Long_head_of_biceps_femoris",
   "en": "Long head of biceps femoris",
-  "layer": "muscle",
+  "layer": "muscle_sup",
   "easy": "허벅지 뒤 근육(바깥)",
   "ko": "대퇴이두근 장두",
   "materials": [
@@ -342,7 +342,7 @@
  {
   "id": "Short_head_of_biceps_femoris",
   "en": "Short head of biceps femoris",
-  "layer": "muscle",
+  "layer": "muscle_deep",
   "easy": "허벅지 뒤 근육(바깥 깊은 층)",
   "ko": "대퇴이두근 단두",
   "materials": [
@@ -353,7 +353,7 @@
  {
   "id": "Medial_head_of_gastrocnemius",
   "en": "Medial head of gastrocnemius",
-  "layer": "muscle",
+  "layer": "muscle_sup",
   "easy": "종아리 근육(안쪽)",
   "ko": "비복근 내측두",
   "materials": [
@@ -364,7 +364,7 @@
  {
   "id": "Lateral_head_of_gastrocnemius",
   "en": "Lateral head of gastrocnemius",
-  "layer": "muscle",
+  "layer": "muscle_sup",
   "easy": "종아리 근육(바깥)",
   "ko": "비복근 외측두",
   "materials": [
@@ -375,7 +375,7 @@
  {
   "id": "Popliteus_muscle",
   "en": "Popliteus muscle",
-  "layer": "muscle",
+  "layer": "muscle_deep",
   "easy": "무릎 뒤 작은 근육",
   "ko": "슬와근",
   "materials": [
@@ -386,7 +386,7 @@
  {
   "id": "Plantaris_muscle",
   "en": "Plantaris muscle",
-  "layer": "muscle",
+  "layer": "muscle_deep",
   "easy": "종아리 가는 근육",
   "ko": "족저근",
   "materials": [
@@ -397,11 +397,121 @@
  {
   "id": "Iliotibial_tract",
   "en": "Iliotibial tract",
-  "layer": "muscle",
+  "layer": "muscle_sup",
   "easy": "허벅지 바깥 띠",
   "ko": "장경인대(장경대)",
   "materials": [
    "Trapezius",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Tibialis_anterior_muscle",
+  "en": "Tibialis anterior muscle",
+  "layer": "muscle_sup",
+  "easy": "정강이 앞 근육",
+  "ko": "전경골근",
+  "materials": [
+   "Flexion hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Extensor_digitorum_longus",
+  "en": "Extensor digitorum longus",
+  "layer": "muscle_sup",
+  "easy": "발가락 펴는 근육",
+  "ko": "장지신근",
+  "materials": [
+   "Extensor extremities",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Fibularis_longus_muscle",
+  "en": "Fibularis longus muscle",
+  "layer": "muscle_sup",
+  "easy": "종아리 바깥 근육",
+  "ko": "장비골근",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Soleus_muscle",
+  "en": "Soleus muscle",
+  "layer": "muscle_deep",
+  "easy": "종아리 속 근육(가자미근)",
+  "ko": "가자미근",
+  "materials": [
+   "Extension hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Tibialis_posterior_muscle",
+  "en": "Tibialis posterior muscle",
+  "layer": "muscle_deep",
+  "easy": "종아리 가장 깊은 근육",
+  "ko": "후경골근",
+  "materials": [
+   "Extension hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Flexor_digitorum_longus",
+  "en": "Flexor digitorum longus",
+  "layer": "muscle_deep",
+  "easy": "발가락 굽히는 근육",
+  "ko": "장지굴근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Flexor_hallucis_longus",
+  "en": "Flexor hallucis longus",
+  "layer": "muscle_deep",
+  "easy": "엄지발가락 굽히는 근육",
+  "ko": "장무지굴근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Extensor_hallucis_longus",
+  "en": "Extensor hallucis longus",
+  "layer": "muscle_deep",
+  "easy": "엄지발가락 펴는 근육",
+  "ko": "장무지신근",
+  "materials": [
+   "Extensor extremities",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Fibularis_brevis_muscle",
+  "en": "Fibularis brevis muscle",
+  "layer": "muscle_deep",
+  "easy": "종아리 바깥 깊은 근육",
+  "ko": "단비골근",
+  "materials": [
+   "Extension hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Adductor_magnus",
+  "en": "Adductor magnus",
+  "layer": "muscle_deep",
+  "easy": "허벅지 안쪽 깊은 근육",
+  "ko": "대내전근",
+  "materials": [
+   "Adductor",
    "Tendon"
   ]
  },

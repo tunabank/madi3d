@@ -1,5 +1,5 @@
 // 질환 프리셋 — 원장님이 직접 문구를 고치거나 항목을 추가하는 파일
-// stage: 0=피부부터 보기, 1=근육부터, 2=인대·연골판부터, 3=뼈만
+// stage: 0=피부부터 보기, 1=겉근육부터, 2=속근육부터, 3=인대·연골판부터, 4=뼈만
 // view: 카메라 방향 [x, y, z]  (+x=안쪽, -x=바깥쪽, +z=앞, -z=뒤, +y=위)
 // highlight: 빨갛게 강조할 구조물 id / highlightMaterial: 재질 이름으로 강조(연골 등)
 // hide: 숨길 구조물 / ghost: 반투명으로 남길 구조물 / dist: 카메라 거리(기본 0.78, 작을수록 가까이)
@@ -14,7 +14,7 @@ export const PRESETS = [
     id: 'acl',
     title: '앞 십자인대 파열',
     sub: '전방십자인대(ACL) 손상',
-    stage: 2,
+    stage: 3,
     hide: ['Patella', ...FRONT_SOFT],
     ghost: ['Femur'],
     highlight: ['Anterior_cruciate_ligament'],
@@ -26,7 +26,7 @@ export const PRESETS = [
     id: 'meniscus',
     title: '연골판 파열',
     sub: '내측 반월상연골 손상',
-    stage: 2,
+    stage: 3,
     hide: ['Femur', 'Patella', ...FRONT_SOFT, 'Oblique_popliteal_ligament'],
     highlight: ['Medial_meniscus'],
     view: [0.1, 1, 0.3],
@@ -37,7 +37,7 @@ export const PRESETS = [
     id: 'oa',
     title: '퇴행성 관절염',
     sub: '관절 연골 마모',
-    stage: 3,
+    stage: 4,
     ghost: ['Patella'],
     highlightMaterial: 'Cartilage',
     view: [0.6, 0.15, 1],
@@ -47,7 +47,7 @@ export const PRESETS = [
     id: 'mcl',
     title: '안쪽 인대 손상',
     sub: '내측측부인대(MCL) 손상',
-    stage: 2,
+    stage: 3,
     hide: ['Anserine_bursa'],
     highlight: ['Superficial_part_of_tibial_collateral_ligament', 'Deep_part_of_tibial_collateral_ligament'],
     view: [1, 0.1, 0.25],

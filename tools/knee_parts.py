@@ -1,5 +1,5 @@
 # 무릎 뷰어에 들어갈 구조물 목록 (Z-Anatomy 오른쪽 다리, ".r")
-# layer: skin(피부) / muscle(근육) / ligament(인대·연골판·점액낭) / bone(뼈)
+# layer: skin(피부) / muscle_sup(겉근육) / muscle_deep(속근육) / ligament(인대·연골판·점액낭) / bone(뼈)
 # easy: 환자용 쉬운 이름, ko: 의학 용어
 
 PARTS = [
@@ -31,21 +31,33 @@ PARTS = [
     ("Semimembranosus bursa.r", "ligament", "무릎 뒤 물주머니", "반막양근 점액낭"),
 
     # --- 근육 ---
-    ("Rectus femoris muscle.r", "muscle", "허벅지 앞 근육(가운데)", "대퇴직근"),
-    ("Vastus lateralis muscle.r", "muscle", "허벅지 앞 근육(바깥)", "외측광근"),
-    ("Vastus medialis muscle.r", "muscle", "허벅지 앞 근육(안쪽)", "내측광근"),
-    ("Vastus intermedius muscle.r", "muscle", "허벅지 앞 근육(깊은 층)", "중간광근"),
-    ("Sartorius muscle.r", "muscle", "허벅지 안쪽 긴 근육", "봉공근"),
-    ("Gracilis muscle.r", "muscle", "허벅지 안쪽 근육", "박근"),
-    ("Semitendinosus muscle.r", "muscle", "허벅지 뒤 근육(안쪽)", "반건양근"),
-    ("Semimembranosus muscle.r", "muscle", "허벅지 뒤 근육(안쪽 깊은 층)", "반막양근"),
-    ("Long head of biceps femoris.r", "muscle", "허벅지 뒤 근육(바깥)", "대퇴이두근 장두"),
-    ("Short head of biceps femoris.r", "muscle", "허벅지 뒤 근육(바깥 깊은 층)", "대퇴이두근 단두"),
-    ("Medial head of gastrocnemius.r", "muscle", "종아리 근육(안쪽)", "비복근 내측두"),
-    ("Lateral head of gastrocnemius.r", "muscle", "종아리 근육(바깥)", "비복근 외측두"),
-    ("Popliteus muscle.r", "muscle", "무릎 뒤 작은 근육", "슬와근"),
-    ("Plantaris muscle.r", "muscle", "종아리 가는 근육", "족저근"),
-    ("Iliotibial tract.r", "muscle", "허벅지 바깥 띠", "장경인대(장경대)"),
+    ("Rectus femoris muscle.r", "muscle_sup", "허벅지 앞 근육(가운데)", "대퇴직근"),
+    ("Vastus lateralis muscle.r", "muscle_sup", "허벅지 앞 근육(바깥)", "외측광근"),
+    ("Vastus medialis muscle.r", "muscle_sup", "허벅지 앞 근육(안쪽)", "내측광근"),
+    ("Vastus intermedius muscle.r", "muscle_deep", "허벅지 앞 근육(깊은 층)", "중간광근"),
+    ("Sartorius muscle.r", "muscle_sup", "허벅지 안쪽 긴 근육", "봉공근"),
+    ("Gracilis muscle.r", "muscle_sup", "허벅지 안쪽 근육", "박근"),
+    ("Semitendinosus muscle.r", "muscle_sup", "허벅지 뒤 근육(안쪽)", "반건양근"),
+    ("Semimembranosus muscle.r", "muscle_deep", "허벅지 뒤 근육(안쪽 깊은 층)", "반막양근"),
+    ("Long head of biceps femoris.r", "muscle_sup", "허벅지 뒤 근육(바깥)", "대퇴이두근 장두"),
+    ("Short head of biceps femoris.r", "muscle_deep", "허벅지 뒤 근육(바깥 깊은 층)", "대퇴이두근 단두"),
+    ("Medial head of gastrocnemius.r", "muscle_sup", "종아리 근육(안쪽)", "비복근 내측두"),
+    ("Lateral head of gastrocnemius.r", "muscle_sup", "종아리 근육(바깥)", "비복근 외측두"),
+    ("Popliteus muscle.r", "muscle_deep", "무릎 뒤 작은 근육", "슬와근"),
+    ("Plantaris muscle.r", "muscle_deep", "종아리 가는 근육", "족저근"),
+    ("Iliotibial tract.r", "muscle_sup", "허벅지 바깥 띠", "장경인대(장경대)"),
+
+    # 종아리·허벅지 추가 근육
+    ("Tibialis anterior muscle.r", "muscle_sup", "정강이 앞 근육", "전경골근"),
+    ("Extensor digitorum longus.r", "muscle_sup", "발가락 펴는 근육", "장지신근"),
+    ("Fibularis longus muscle.r", "muscle_sup", "종아리 바깥 근육", "장비골근"),
+    ("Soleus muscle.r", "muscle_deep", "종아리 속 근육(가자미근)", "가자미근"),
+    ("Tibialis posterior muscle.r", "muscle_deep", "종아리 가장 깊은 근육", "후경골근"),
+    ("Flexor digitorum longus.r", "muscle_deep", "발가락 굽히는 근육", "장지굴근"),
+    ("Flexor hallucis longus.r", "muscle_deep", "엄지발가락 굽히는 근육", "장무지굴근"),
+    ("Extensor hallucis longus.r", "muscle_deep", "엄지발가락 펴는 근육", "장무지신근"),
+    ("Fibularis brevis muscle.r", "muscle_deep", "종아리 바깥 깊은 근육", "단비골근"),
+    ("Adductor magnus.r", "muscle_deep", "허벅지 안쪽 깊은 근육", "대내전근"),
 
     # --- 피부 ---
     ("Anterior region of thigh.r", "skin", "피부", "피부(허벅지 앞)"),
