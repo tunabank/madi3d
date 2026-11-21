@@ -262,5 +262,10 @@ lookFrom(VIEWS.front);
 refresh();
 renderer.setAnimationLoop(() => { stepCamera(); controls.update(); renderer.render(scene, camera); });
 
+// 앱 설치(PWA)·오프라인 저장 — 배포 버전에서만, 미리보기 환경에서는 조용히 건너뜀
+if (import.meta.env.PROD && !import.meta.env.VITE_MODEL_JSON && 'serviceWorker' in navigator) {
+  navigator.serviceWorker.register(`${BASE}sw.js`).catch(() => {});
+}
+
 // 테스트·디버그용
 window.__knee = { state, applyPreset, refresh, PRESETS, lookFrom, VIEWS, ready: true };
