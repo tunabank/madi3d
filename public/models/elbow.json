@@ -1,0 +1,444 @@
+[
+ {
+  "id": "Humerus",
+  "en": "Humerus",
+  "layer": "bone",
+  "easy": "위팔뼈",
+  "ko": "상완골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Radius",
+  "en": "Radius",
+  "layer": "bone",
+  "easy": "노뼈(엄지 쪽 아래팔뼈)",
+  "ko": "요골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Ulna",
+  "en": "Ulna",
+  "layer": "bone",
+  "easy": "자뼈(새끼 쪽 아래팔뼈)",
+  "ko": "척골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Ulnar_collateral_ligament",
+  "en": "Ulnar collateral ligament",
+  "layer": "ligament",
+  "easy": "팔꿈치 안쪽 인대",
+  "ko": "내측측부인대(척측측부인대, UCL)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Radial_collateral_ligament",
+  "en": "Radial collateral ligament",
+  "layer": "ligament",
+  "easy": "팔꿈치 바깥쪽 인대",
+  "ko": "외측측부인대(요측측부인대)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Annular_ligament_of_radius",
+  "en": "Annular ligament of radius",
+  "layer": "ligament",
+  "easy": "노뼈 머리를 감싸는 고리 인대",
+  "ko": "윤상인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Articular_capsule_of_elbow_joint",
+  "en": "Articular capsule of elbow joint",
+  "layer": "ligament",
+  "easy": "팔꿈치 관절 주머니",
+  "ko": "주관절 관절낭",
+  "materials": [
+   "Articular capsule"
+  ]
+ },
+ {
+  "id": "Quadrate_ligament",
+  "en": "Quadrate ligament",
+  "layer": "ligament",
+  "easy": "노뼈-자뼈 사이 짧은 인대",
+  "ko": "방형인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Oblique_cord",
+  "en": "Oblique cord",
+  "layer": "ligament",
+  "easy": "노뼈-자뼈 사이 비스듬한 끈",
+  "ko": "사삭",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Interosseous_membrane_of_forearm",
+  "en": "Interosseous membrane of forearm",
+  "layer": "ligament",
+  "easy": "아래팔뼈 사이 막",
+  "ko": "전완 골간막",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Bicipitoradial_bursa",
+  "en": "Bicipitoradial bursa",
+  "layer": "ligament",
+  "easy": "이두근 힘줄 아래 물주머니",
+  "ko": "이두요골 점액낭",
+  "materials": [
+   "Bursa"
+  ]
+ },
+ {
+  "id": "Subtendinous_bursa_of_triceps_brachii_muscle",
+  "en": "Subtendinous bursa of triceps brachii muscle",
+  "layer": "ligament",
+  "easy": "삼두근 힘줄 아래 물주머니",
+  "ko": "삼두근 건하 점액낭",
+  "materials": [
+   "Bursa"
+  ]
+ },
+ {
+  "id": "Long_head_of_biceps_brachii",
+  "en": "Long head of biceps brachii",
+  "layer": "muscle_sup",
+  "easy": "알통 근육(긴 갈래)",
+  "ko": "상완이두근 장두",
+  "materials": [
+   "Biarticular",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Short_head_of_biceps_brachii",
+  "en": "Short head of biceps brachii",
+  "layer": "muscle_sup",
+  "easy": "알통 근육(짧은 갈래)",
+  "ko": "상완이두근 단두",
+  "materials": [
+   "Biarticular",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Long_head_of_triceps_brachii",
+  "en": "Long head of triceps brachii",
+  "layer": "muscle_sup",
+  "easy": "팔 뒤 근육(긴 갈래)",
+  "ko": "상완삼두근 장두",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Lateral_head_of_triceps_brachii",
+  "en": "Lateral head of triceps brachii",
+  "layer": "muscle_sup",
+  "easy": "팔 뒤 근육(바깥 갈래)",
+  "ko": "상완삼두근 외측두",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Brachioradialis_muscle",
+  "en": "Brachioradialis muscle",
+  "layer": "muscle_sup",
+  "easy": "아래팔 바깥 굵은 근육",
+  "ko": "완요골근",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Extensor_carpi_radialis_longus",
+  "en": "Extensor carpi radialis longus",
+  "layer": "muscle_sup",
+  "easy": "손목 펴는 근육(엄지 쪽, 긴)",
+  "ko": "장요측수근신근",
+  "materials": [
+   "Extension hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Extensor_carpi_radialis_brevis",
+  "en": "Extensor carpi radialis brevis",
+  "layer": "muscle_sup",
+  "easy": "손목 펴는 근육(엄지 쪽, 짧은)",
+  "ko": "단요측수근신근",
+  "materials": [
+   "Extension hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Extensor_digitorum",
+  "en": "Extensor digitorum",
+  "layer": "muscle_sup",
+  "easy": "손가락 펴는 근육",
+  "ko": "총지신근",
+  "materials": [
+   "Extensor extremities",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Extensor_digiti_minimi",
+  "en": "Extensor digiti minimi",
+  "layer": "muscle_sup",
+  "easy": "새끼손가락 펴는 근육",
+  "ko": "소지신근",
+  "materials": [
+   "Extensor extremities",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Humeral_head_of_extensor_carpi_ulnaris",
+  "en": "Humeral head of extensor carpi ulnaris",
+  "layer": "muscle_sup",
+  "easy": "손목 펴는 근육(새끼 쪽)",
+  "ko": "척측수근신근",
+  "materials": [
+   "Extension hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Ulnar_head_of_extensor_carpi_ulnaris",
+  "en": "Ulnar head of extensor carpi ulnaris",
+  "layer": "muscle_sup",
+  "easy": "손목 펴는 근육(새끼 쪽)",
+  "ko": "척측수근신근",
+  "materials": [
+   "Trapezius",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Anconeus_muscle",
+  "en": "Anconeus muscle",
+  "layer": "muscle_sup",
+  "easy": "팔꿈치 뒤 작은 근육",
+  "ko": "주근",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Superficial_head_of_pronator_teres",
+  "en": "Superficial head of pronator teres",
+  "layer": "muscle_sup",
+  "easy": "아래팔 돌리는 근육(엎침)",
+  "ko": "원회내근",
+  "materials": [
+   "Internal rotator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Flexor_carpi_radialis",
+  "en": "Flexor carpi radialis",
+  "layer": "muscle_sup",
+  "easy": "손목 굽히는 근육(엄지 쪽)",
+  "ko": "요측수근굴근",
+  "materials": [
+   "Flexion hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Palmaris_longus_muscle",
+  "en": "Palmaris longus muscle",
+  "layer": "muscle_sup",
+  "easy": "손바닥 긴 근육",
+  "ko": "장장근",
+  "materials": [
+   "Flexion hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Humeral_head_of_flexor_carpi_ulnaris",
+  "en": "Humeral head of flexor carpi ulnaris",
+  "layer": "muscle_sup",
+  "easy": "손목 굽히는 근육(새끼 쪽)",
+  "ko": "척측수근굴근",
+  "materials": [
+   "Flexion hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Ulnar_head_of_flexor_carpi_ulnaris",
+  "en": "Ulnar head of flexor carpi ulnaris",
+  "layer": "muscle_sup",
+  "easy": "손목 굽히는 근육(새끼 쪽)",
+  "ko": "척측수근굴근",
+  "materials": [
+   "Flexion hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Brachialis_muscle",
+  "en": "Brachialis muscle",
+  "layer": "muscle_deep",
+  "easy": "알통 아래 깊은 근육",
+  "ko": "상완근",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Medial_head_of_triceps_brachii",
+  "en": "Medial head of triceps brachii",
+  "layer": "muscle_deep",
+  "easy": "팔 뒤 근육(안쪽 갈래)",
+  "ko": "상완삼두근 내측두",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Supinator",
+  "en": "Supinator",
+  "layer": "muscle_deep",
+  "easy": "아래팔 돌리는 근육(뒤침)",
+  "ko": "회외근",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Deep_head_of_pronator_teres",
+  "en": "Deep head of pronator teres",
+  "layer": "muscle_deep",
+  "easy": "아래팔 돌리는 근육(엎침, 깊은)",
+  "ko": "원회내근",
+  "materials": [
+   "Internal rotator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Humero-ulnar_head_of_flexor_digitorum_superficialis",
+  "en": "Humero-ulnar head of flexor digitorum superficialis",
+  "layer": "muscle_deep",
+  "easy": "손가락 굽히는 근육(얕은)",
+  "ko": "천지굴근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Radial_head_of_flexor_digitorum_superficialis",
+  "en": "Radial head of flexor digitorum superficialis",
+  "layer": "muscle_deep",
+  "easy": "손가락 굽히는 근육(얕은)",
+  "ko": "천지굴근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Flexor_digitorum_profundus",
+  "en": "Flexor digitorum profundus",
+  "layer": "muscle_deep",
+  "easy": "손가락 굽히는 근육(깊은)",
+  "ko": "심지굴근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Flexor_pollicis_longus",
+  "en": "Flexor pollicis longus",
+  "layer": "muscle_deep",
+  "easy": "엄지 굽히는 근육",
+  "ko": "장무지굴근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Abductor_pollicis_longus",
+  "en": "Abductor pollicis longus",
+  "layer": "muscle_deep",
+  "easy": "엄지 벌리는 근육",
+  "ko": "장무지외전근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Extensor_pollicis_longus",
+  "en": "Extensor pollicis longus",
+  "layer": "muscle_deep",
+  "easy": "엄지 펴는 근육(긴)",
+  "ko": "장무지신근",
+  "materials": [
+   "Extensor extremities",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Extensor_pollicis_brevis",
+  "en": "Extensor pollicis brevis",
+  "layer": "muscle_deep",
+  "easy": "엄지 펴는 근육(짧은)",
+  "ko": "단무지신근",
+  "materials": [
+   "Extensor extremities",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Extensor_indicis",
+  "en": "Extensor indicis",
+  "layer": "muscle_deep",
+  "easy": "검지 펴는 근육",
+  "ko": "시지신근",
+  "materials": [
+   "Extensor extremities",
+   "Tendon"
+  ]
+ }
+]

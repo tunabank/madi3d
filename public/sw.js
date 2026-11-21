@@ -1,6 +1,6 @@
 // Madi 3D 서비스 워커 — 한 번 받은 화면·모델을 저장해 두고 다음부터 바로 띄운다.
 // 화면(HTML)·구조물 목록은 네트워크 우선, 나머지(JS·모델·아이콘)는 저장본을 먼저 주고 뒤에서 갱신.
-const CACHE = 'madi3d-v6';
+const CACHE = 'madi3d-v7';
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['./', 'manifest.webmanifest'])));
