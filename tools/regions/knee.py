@@ -60,3 +60,8 @@ PARTS = [
     ("Adductor magnus.r", "muscle_deep", "허벅지 안쪽 깊은 근육", "대내전근"),
 
 ]
+
+# 원본 모델 보정: 대퇴직근 힘줄이 무릎뼈 뒤(관절 안)로 지나가게 되어 있어서, 무릎뼈 앞면을 덮고 지나가도록 밀어냄
+FIXUPS = [
+    ("wrap_over", "Rectus femoris muscle.r", "Patella.r"),
+]
