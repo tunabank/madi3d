@@ -67,8 +67,26 @@ def wrap_over(tendon, bone, margin=0.0015, fade=0.03, slice_h=0.002):
     T.update()
     print("FIXUP wrap_over", tendon, "over", bone, "moved", moved, "max shift mm", round(-min(shift) * 1000, 1))
 
+def cut_between(tendon, bone, inset=0.006):
+    """tendon 메쉬에서 bone의 위·아래 끝 사이 높이 구간을 지운다 (끝은 bone 안으로 inset만큼 들어가 묻히게).
+    잘린 단면은 막아서 속이 빈 관이 보이지 않게 한다. 예: 대퇴사두근건은 무릎뼈 위쪽 끝에서 끝나고
+    슬개인대는 무릎뼈 아래쪽 끝에서 다시 시작."""
+    import bmesh
+    T, B = baked_meshes[tendon], baked_meshes[bone]
+    bz = [v.co.z for v in B.vertices]
+    lo, hi = min(bz) + inset, max(bz) - inset
+    bm = bmesh.new(); bm.from_mesh(T)
+    kill = [f for f in bm.faces if lo < f.calc_center_median().z < hi]
+    bmesh.ops.delete(bm, geom=kill, context="FACES")
+    loose = [v for v in bm.verts if not v.link_faces]
+    bmesh.ops.delete(bm, geom=loose, context="VERTS")
+    holes = [e for e in bm.edges if e.is_boundary and lo - 0.01 < e.verts[0].co.z < hi + 0.01]
+    filled = bmesh.ops.holes_fill(bm, edges=holes, sides=0)
+    bm.to_mesh(T); bm.free(); T.update()
+    print("FIXUP cut_between", tendon, bone, "removed faces", len(kill), "caps", len(filled["faces"]))
+
 for fx in getattr(mod, "FIXUPS", []):
-    {"wrap_over": wrap_over}[fx[0]](*fx[1:])
+    {"wrap_over": wrap_over, "cut_between": cut_between}[fx[0]](*fx[1:])
 
 keep = set(baked)
 for ob in list(bpy.data.objects):
