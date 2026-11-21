@@ -1,0 +1,827 @@
+[
+ {
+  "id": "Tibia",
+  "en": "Tibia",
+  "layer": "bone",
+  "easy": "정강이뼈",
+  "ko": "경골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Fibula",
+  "en": "Fibula",
+  "layer": "bone",
+  "easy": "종아리뼈",
+  "ko": "비골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Talus",
+  "en": "Talus",
+  "layer": "bone",
+  "easy": "목말뼈(발목뼈)",
+  "ko": "거골",
+  "materials": [
+   "Bone-1",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Calcaneus",
+  "en": "Calcaneus",
+  "layer": "bone",
+  "easy": "발뒤꿈치뼈",
+  "ko": "종골",
+  "materials": [
+   "Bone-5",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Navicular_bone",
+  "en": "Navicular bone",
+  "layer": "bone",
+  "easy": "발배뼈",
+  "ko": "주상골",
+  "materials": [
+   "Bone-2",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Cuboid_bone",
+  "en": "Cuboid bone",
+  "layer": "bone",
+  "easy": "입방뼈",
+  "ko": "입방골",
+  "materials": [
+   "Bone-6",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Medial_cuneiform_bone",
+  "en": "Medial cuneiform bone",
+  "layer": "bone",
+  "easy": "쐐기뼈(안쪽)",
+  "ko": "내측 설상골",
+  "materials": [
+   "Bone-3",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intermediate_cuneiform_bone",
+  "en": "Intermediate cuneiform bone",
+  "layer": "bone",
+  "easy": "쐐기뼈(가운데)",
+  "ko": "중간 설상골",
+  "materials": [
+   "Bone-3",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Lateral_cuneiform_bone",
+  "en": "Lateral cuneiform bone",
+  "layer": "bone",
+  "easy": "쐐기뼈(바깥)",
+  "ko": "외측 설상골",
+  "materials": [
+   "Bone-3",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "First_metatarsal_bone",
+  "en": "First metatarsal bone",
+  "layer": "bone",
+  "easy": "발허리뼈(엄지)",
+  "ko": "제1중족골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Second_metatarsal_bone",
+  "en": "Second metatarsal bone",
+  "layer": "bone",
+  "easy": "발허리뼈(둘째)",
+  "ko": "제2중족골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Third_metatarsal_bone",
+  "en": "Third metatarsal bone",
+  "layer": "bone",
+  "easy": "발허리뼈(셋째)",
+  "ko": "제3중족골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Fourth_metatarsal_bone",
+  "en": "Fourth metatarsal bone",
+  "layer": "bone",
+  "easy": "발허리뼈(넷째)",
+  "ko": "제4중족골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Fifth_metatarsal_bone",
+  "en": "Fifth metatarsal bone",
+  "layer": "bone",
+  "easy": "발허리뼈(새끼)",
+  "ko": "제5중족골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Sesamoid_bones_of_foot",
+  "en": "Sesamoid bones of foot",
+  "layer": "bone",
+  "easy": "엄지발가락 밑 작은 뼈",
+  "ko": "종자골",
+  "materials": [
+   "Bone-1",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Proximal_phalanx_of_first_finger_of_foot",
+  "en": "Proximal phalanx of first finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(엄지)",
+  "ko": "엄지발가락 기절골",
+  "materials": [
+   "Bone-6",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Proximal_phalanx_of_second_finger_of_foot",
+  "en": "Proximal phalanx of second finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(둘째)",
+  "ko": "둘째발가락 기절골",
+  "materials": [
+   "Bone-6",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Proximal_phalanx_of_third_finger_of_foot",
+  "en": "Proximal phalanx of third finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(셋째)",
+  "ko": "셋째발가락 기절골",
+  "materials": [
+   "Bone-6",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Proximal_phalanx_of_fourth_finger_of_foot",
+  "en": "Proximal phalanx of fourth finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(넷째)",
+  "ko": "넷째발가락 기절골",
+  "materials": [
+   "Bone-6",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Proximal_phalanx_of_fifth_finger_of_foot",
+  "en": "Proximal phalanx of fifth finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(새끼)",
+  "ko": "새끼발가락 기절골",
+  "materials": [
+   "Bone-6",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Middle_phalanx_of_second_finger_of_foot",
+  "en": "Middle phalanx of second finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(둘째)",
+  "ko": "둘째발가락 중절골",
+  "materials": [
+   "Bone-7",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Middle_phalanx_of_third_finger_of_foot",
+  "en": "Middle phalanx of third finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(셋째)",
+  "ko": "셋째발가락 중절골",
+  "materials": [
+   "Bone-7",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Middle_phalanx_of_fourth_finger_of_foot",
+  "en": "Middle phalanx of fourth finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(넷째)",
+  "ko": "넷째발가락 중절골",
+  "materials": [
+   "Bone-7",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Middle_phalanx_of_fifth_finger_of_foot",
+  "en": "Middle phalanx of fifth finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(새끼)",
+  "ko": "새끼발가락 중절골",
+  "materials": [
+   "Bone-7",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Distal_phalanx_of_first_finger_of_foot",
+  "en": "Distal phalanx of first finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(엄지)",
+  "ko": "엄지발가락 원위지골",
+  "materials": [
+   "Bone-8",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Distal_phalanx_of_second_finger_of_foot",
+  "en": "Distal phalanx of second finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(둘째)",
+  "ko": "둘째발가락 원위지골",
+  "materials": [
+   "Bone-8",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Distal_phalanx_of_third_finger_of_foot",
+  "en": "Distal phalanx of third finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(셋째)",
+  "ko": "셋째발가락 원위지골",
+  "materials": [
+   "Bone-8",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Distal_phalanx_of_fourth_finger_of_foot",
+  "en": "Distal phalanx of fourth finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(넷째)",
+  "ko": "넷째발가락 원위지골",
+  "materials": [
+   "Bone-8",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Distal_phalanx_of_fifth_finger_of_foot",
+  "en": "Distal phalanx of fifth finger of foot",
+  "layer": "bone",
+  "easy": "발가락뼈(새끼)",
+  "ko": "새끼발가락 원위지골",
+  "materials": [
+   "Bone-8",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Anterior_talofibular_ligament",
+  "en": "Anterior talofibular ligament",
+  "layer": "ligament",
+  "easy": "발목 바깥 앞 인대",
+  "ko": "전거비인대(ATFL)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Calcaneofibular_ligament",
+  "en": "Calcaneofibular ligament",
+  "layer": "ligament",
+  "easy": "발목 바깥 아래 인대",
+  "ko": "종비인대(CFL)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Posterior_talofibular_ligament",
+  "en": "Posterior talofibular ligament",
+  "layer": "ligament",
+  "easy": "발목 바깥 뒤 인대",
+  "ko": "후거비인대(PTFL)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Tibionavicular_ligament",
+  "en": "Tibionavicular ligament",
+  "layer": "ligament",
+  "easy": "발목 안쪽 인대(앞)",
+  "ko": "경주인대(삼각인대)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Tibiocalcaneal_ligament",
+  "en": "Tibiocalcaneal ligament",
+  "layer": "ligament",
+  "easy": "발목 안쪽 인대(가운데)",
+  "ko": "경종인대(삼각인대)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Posterior_tibiotalar_ligament",
+  "en": "Posterior tibiotalar ligament",
+  "layer": "ligament",
+  "easy": "발목 안쪽 인대(뒤)",
+  "ko": "후경거인대(삼각인대)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Anterior_tibiofibular_ligament",
+  "en": "Anterior tibiofibular ligament",
+  "layer": "ligament",
+  "easy": "두 정강이뼈를 잇는 인대(앞)",
+  "ko": "전하경비인대(인대결합)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Posterior_tibiofibular_ligament",
+  "en": "Posterior tibiofibular ligament",
+  "layer": "ligament",
+  "easy": "두 정강이뼈를 잇는 인대(뒤)",
+  "ko": "후하경비인대(인대결합)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Interosseous_membrane_of_leg",
+  "en": "Interosseous membrane of leg",
+  "layer": "ligament",
+  "easy": "정강이뼈 사이 막",
+  "ko": "하퇴 골간막",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Anterior_talocalcaneal_ligament",
+  "en": "Anterior talocalcaneal ligament",
+  "layer": "ligament",
+  "easy": "목말-뒤꿈치 인대(앞)",
+  "ko": "전거종인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Lateral_talocalcaneal_ligament",
+  "en": "Lateral talocalcaneal ligament",
+  "layer": "ligament",
+  "easy": "목말-뒤꿈치 인대(바깥)",
+  "ko": "외측거종인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Plantar_calcaneonavicular_ligament",
+  "en": "Plantar calcaneonavicular ligament",
+  "layer": "ligament",
+  "easy": "발바닥 아치 인대(스프링 인대)",
+  "ko": "족저종주인대(스프링 인대)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Calcaneonavicular_ligament",
+  "en": "Calcaneonavicular ligament",
+  "layer": "ligament",
+  "easy": "뒤꿈치-발배뼈 인대",
+  "ko": "종주인대(이분인대)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Calcaneocuboid_ligament",
+  "en": "Calcaneocuboid ligament",
+  "layer": "ligament",
+  "easy": "뒤꿈치-입방뼈 인대",
+  "ko": "종입방인대(이분인대)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Long_plantar_ligament",
+  "en": "Long plantar ligament",
+  "layer": "ligament",
+  "easy": "발바닥 긴 인대",
+  "ko": "장족저인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Plantar_aponeurosis",
+  "en": "Plantar aponeurosis",
+  "layer": "ligament",
+  "easy": "발바닥 근막",
+  "ko": "족저근막",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Calcaneal_tendon",
+  "en": "Calcaneal tendon",
+  "layer": "ligament",
+  "easy": "아킬레스 힘줄",
+  "ko": "아킬레스건(종골건)",
+  "materials": [
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Superior_extensor_retinaculum_of_ankle",
+  "en": "Superior extensor retinaculum of ankle",
+  "layer": "ligament",
+  "easy": "발등 힘줄 고정띠(위)",
+  "ko": "상신근지대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Inferior_extensor_retinaculum_of_ankle",
+  "en": "Inferior extensor retinaculum of ankle",
+  "layer": "ligament",
+  "easy": "발등 힘줄 고정띠(아래)",
+  "ko": "하신근지대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Flexor_retinaculum_of_ankle",
+  "en": "Flexor retinaculum of ankle",
+  "layer": "ligament",
+  "easy": "발목 안쪽 힘줄 고정띠",
+  "ko": "굴근지대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Superior_fibular_retinaculum",
+  "en": "Superior fibular retinaculum",
+  "layer": "ligament",
+  "easy": "발목 바깥 힘줄 고정띠(위)",
+  "ko": "상비골근지대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Inferior_fibular_retinaculum",
+  "en": "Inferior fibular retinaculum",
+  "layer": "ligament",
+  "easy": "발목 바깥 힘줄 고정띠(아래)",
+  "ko": "하비골근지대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Medial_head_of_gastrocnemius",
+  "en": "Medial head of gastrocnemius",
+  "layer": "muscle_sup",
+  "easy": "종아리 근육(안쪽)",
+  "ko": "비복근 내측두",
+  "materials": [
+   "Biarticular",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Lateral_head_of_gastrocnemius",
+  "en": "Lateral head of gastrocnemius",
+  "layer": "muscle_sup",
+  "easy": "종아리 근육(바깥)",
+  "ko": "비복근 외측두",
+  "materials": [
+   "Biarticular",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Tibialis_anterior_muscle",
+  "en": "Tibialis anterior muscle",
+  "layer": "muscle_sup",
+  "easy": "정강이 앞 근육",
+  "ko": "전경골근",
+  "materials": [
+   "Flexion hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Extensor_digitorum_longus",
+  "en": "Extensor digitorum longus",
+  "layer": "muscle_sup",
+  "easy": "발가락 펴는 긴 근육",
+  "ko": "장지신근",
+  "materials": [
+   "Extensor extremities",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Extensor_hallucis_longus",
+  "en": "Extensor hallucis longus",
+  "layer": "muscle_sup",
+  "easy": "엄지발가락 펴는 긴 근육",
+  "ko": "장무지신근",
+  "materials": [
+   "Extensor extremities",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Fibularis_longus_muscle",
+  "en": "Fibularis longus muscle",
+  "layer": "muscle_sup",
+  "easy": "종아리 바깥 근육(긴)",
+  "ko": "장비골근",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Fibularis_tertius_muscle",
+  "en": "Fibularis tertius muscle",
+  "layer": "muscle_sup",
+  "easy": "발등 바깥 작은 근육",
+  "ko": "제3비골근",
+  "materials": [
+   "Extension hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Extensor_digitorum_brevis",
+  "en": "Extensor digitorum brevis",
+  "layer": "muscle_sup",
+  "easy": "발등 발가락 펴는 근육",
+  "ko": "단지신근",
+  "materials": [
+   "Extensor extremities",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Extensor_hallucis_brevis",
+  "en": "Extensor hallucis brevis",
+  "layer": "muscle_sup",
+  "easy": "발등 엄지 펴는 근육",
+  "ko": "단무지신근",
+  "materials": [
+   "Extensor extremities",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Abductor_hallucis",
+  "en": "Abductor hallucis",
+  "layer": "muscle_sup",
+  "easy": "발 안쪽 근육(엄지)",
+  "ko": "무지외전근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Abductor_digiti_minimi_of_foot",
+  "en": "Abductor digiti minimi of foot",
+  "layer": "muscle_sup",
+  "easy": "발 바깥 근육(새끼)",
+  "ko": "소지외전근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Flexor_digitorum_brevis",
+  "en": "Flexor digitorum brevis",
+  "layer": "muscle_sup",
+  "easy": "발바닥 발가락 굽히는 근육",
+  "ko": "단지굴근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Soleus_muscle",
+  "en": "Soleus muscle",
+  "layer": "muscle_deep",
+  "easy": "종아리 속 근육(가자미근)",
+  "ko": "가자미근",
+  "materials": [
+   "Extension hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Plantaris_muscle",
+  "en": "Plantaris muscle",
+  "layer": "muscle_deep",
+  "easy": "종아리 가는 근육",
+  "ko": "족저근",
+  "materials": [
+   "Biarticular",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Fibularis_brevis_muscle",
+  "en": "Fibularis brevis muscle",
+  "layer": "muscle_deep",
+  "easy": "종아리 바깥 근육(짧은)",
+  "ko": "단비골근",
+  "materials": [
+   "Extension hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Tibialis_posterior_muscle",
+  "en": "Tibialis posterior muscle",
+  "layer": "muscle_deep",
+  "easy": "종아리 가장 깊은 근육",
+  "ko": "후경골근",
+  "materials": [
+   "Extension hand/foot",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Flexor_digitorum_longus",
+  "en": "Flexor digitorum longus",
+  "layer": "muscle_deep",
+  "easy": "발가락 굽히는 긴 근육",
+  "ko": "장지굴근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Flexor_hallucis_longus",
+  "en": "Flexor hallucis longus",
+  "layer": "muscle_deep",
+  "easy": "엄지발가락 굽히는 긴 근육",
+  "ko": "장무지굴근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Quadratus_plantae_muscle",
+  "en": "Quadratus plantae muscle",
+  "layer": "muscle_deep",
+  "easy": "발바닥 깊은 근육",
+  "ko": "족저방형근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Lumbrical_muscles_of_foot",
+  "en": "Lumbrical muscles of foot",
+  "layer": "muscle_deep",
+  "easy": "발바닥 작은 근육",
+  "ko": "충양근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Medial_head_of_flexor_hallucis_brevis",
+  "en": "Medial head of flexor hallucis brevis",
+  "layer": "muscle_deep",
+  "easy": "엄지 굽히는 짧은 근육(안쪽)",
+  "ko": "단무지굴근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Lateral_head_of_flexor_hallucis_brevis",
+  "en": "Lateral head of flexor hallucis brevis",
+  "layer": "muscle_deep",
+  "easy": "엄지 굽히는 짧은 근육(바깥)",
+  "ko": "단무지굴근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Oblique_head_of_adductor_hallucis",
+  "en": "Oblique head of adductor hallucis",
+  "layer": "muscle_deep",
+  "easy": "엄지 모으는 근육",
+  "ko": "무지내전근",
+  "materials": [
+   "Adductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Flexor_digiti_minimi_of_foot",
+  "en": "Flexor digiti minimi of foot",
+  "layer": "muscle_deep",
+  "easy": "새끼발가락 굽히는 근육",
+  "ko": "소지굴근",
+  "materials": [
+   "Flexion fingers",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Dorsal_interossei_muscles_of_foot",
+  "en": "Dorsal interossei muscles of foot",
+  "layer": "muscle_deep",
+  "easy": "발허리뼈 사이 근육(등쪽)",
+  "ko": "배측골간근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Plantar_interossei_muscles",
+  "en": "Plantar interossei muscles",
+  "layer": "muscle_deep",
+  "easy": "발허리뼈 사이 근육(바닥쪽)",
+  "ko": "족저골간근",
+  "materials": [
+   "Adductor",
+   "Tendon"
+  ]
+ }
+]

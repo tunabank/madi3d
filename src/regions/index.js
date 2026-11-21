@@ -3,5 +3,6 @@ import knee from './knee.js';
 import shoulder from './shoulder.js';
 import neck from './neck.js';
 import lumbar from './lumbar.js';
+import ankle from './ankle.js';
 
-export const REGIONS = [knee, shoulder, neck, lumbar];
+export const REGIONS = [knee, shoulder, neck, lumbar, ankle];
