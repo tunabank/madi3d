@@ -14,6 +14,7 @@ const SEG_SHARE = [0.427, 0.252, 0.181, 0.117, 0.023];
 const PRESETS = [
   {
     id: 'flat',
+    en: 'Flat back (loss of lumbar lordosis)',
     title: '일자허리',
     sub: '요추 전만 감소·소실',
     stage: 3,
@@ -23,6 +24,7 @@ const PRESETS = [
   },
   {
     id: 'disc',
+    en: 'Lumbar disc herniation',
     title: '허리 디스크',
     sub: '요추 추간판 탈출증',
     stage: 2,
@@ -36,6 +38,7 @@ const PRESETS = [
   },
   {
     id: 'stenosis',
+    en: 'Lumbar spinal stenosis',
     title: '척추관 협착증',
     sub: '요추 척추관 협착증',
     stage: 2,
@@ -49,6 +52,7 @@ const PRESETS = [
   },
   {
     id: 'erector',
+    en: 'Erector spinae',
     title: '척추기립근',
     sub: '허리를 펴는 근육',
     stage: 0,
@@ -59,6 +63,7 @@ const PRESETS = [
   },
   {
     id: 'psoas',
+    en: 'Iliopsoas',
     title: '장요근',
     sub: '대요근·장골근',
     stage: 1,
@@ -70,6 +75,7 @@ const PRESETS = [
   },
   {
     id: 'core',
+    en: 'Multifidus & transversus abdominis',
     title: '허리 깊은 근육',
     sub: '다열근·복횡근',
     stage: 1,

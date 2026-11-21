@@ -14,6 +14,7 @@ const withGaze = (a) => { const sum = a.reduce((x, y) => x + y, 0); return [...a
 const PRESETS = [
   {
     id: 'straight',
+    en: 'Straight neck (loss of cervical lordosis)',
     title: '일자목',
     sub: '경추 전만 소실',
     stage: 3,
@@ -23,6 +24,7 @@ const PRESETS = [
   },
   {
     id: 'forward',
+    en: 'Forward head posture',
     title: '거북목',
     sub: '전방 머리 자세',
     stage: 3,
@@ -32,6 +34,7 @@ const PRESETS = [
   },
   {
     id: 'suboccipital',
+    en: 'Suboccipital muscle tightness',
     title: '뒷목 근육 뭉침',
     sub: '후두하근 단축(거북목)',
     stage: 1,
@@ -43,6 +46,7 @@ const PRESETS = [
   },
   {
     id: 'disc',
+    en: 'Cervical disc herniation',
     title: '목 디스크',
     sub: '경추 추간판 탈출증',
     stage: 2,
@@ -56,6 +60,7 @@ const PRESETS = [
   },
   {
     id: 'flexors',
+    en: 'Deep cervical flexors',
     title: '목 앞 깊은 근육',
     sub: '심부 경부 굴곡근',
     stage: 1,

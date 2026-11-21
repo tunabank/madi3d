@@ -13,6 +13,13 @@ npm run dev      # 개발 서버 (http://localhost:5173)
 npm run build    # dist/ 생성 → Vercel에 그대로 배포
 ```
 
+## 카카오톡 공유 미리보기
+
+주소를 카톡으로 보내면 `public/og.png`(1200×630)가 미리보기로 뜹니다.
+- 미리보기 주소는 `.env`의 `VITE_SITE_URL`(현재 `https://madi3d.vercel.app`)을 씁니다. Vercel 주소가 다르면 이 값만 바꾸세요.
+- 카톡은 미리보기를 한동안 저장해 둡니다. 이미지를 바꾼 뒤 옛 그림이 보이면 카카오 개발자 사이트의 "공유 디버거"에서 캐시를 지우면 됩니다.
+- 이미지 다시 만들기: `tools/og/render.mjs`(3D 렌더) → `tools/og/compose.py`(글씨·배치)
+
 ## 진료실 태블릿에 설치 (PWA)
 
 배포 주소를 태블릿 브라우저로 연 뒤
@@ -26,7 +33,7 @@ npm run build    # dist/ 생성 → Vercel에 그대로 배포
 
 | 경로 | 내용 |
 | --- | --- |
-| `src/main.js` | 뷰어 (부위 전환, 층 벗기기, 시점, 터치 이름 보기, 강조) |
+| `src/main.js` | 뷰어 (부위 전환, 층 벗기기, 시점, 터치 이름 보기(한글·영어), 강조) |
 | `src/regions/knee.js`, `shoulder.js`, `neck.js`, `lumbar.js` | **부위 설정 + 질환 프리셋** — 문구·강조 부위·시점을 여기서 고침 |
 | `src/regions/index.js` | 부위 목록 (탭 순서) |
 | `src/posture.js` | 척추 자세 애니메이션 공용 (척추 회전 체인 + 연조직 변형, 자세·수치는 부위 설정에서) |

@@ -13,6 +13,7 @@ const FRONT_SOFT = [
 const PRESETS = [
   {
     id: 'acl',
+    en: 'ACL tear',
     title: '앞 십자인대 파열',
     sub: '전방십자인대(ACL) 손상',
     stage: 2,
@@ -25,6 +26,7 @@ const PRESETS = [
   },
   {
     id: 'meniscus',
+    en: 'Medial meniscus tear',
     title: '연골판 파열',
     sub: '내측 반월상연골 손상',
     stage: 2,
@@ -36,6 +38,7 @@ const PRESETS = [
   },
   {
     id: 'oa',
+    en: 'Knee osteoarthritis',
     title: '퇴행성 관절염',
     sub: '관절 연골 마모',
     stage: 3,
@@ -46,6 +49,7 @@ const PRESETS = [
   },
   {
     id: 'mcl',
+    en: 'MCL injury',
     title: '안쪽 인대 손상',
     sub: '내측측부인대(MCL) 손상',
     stage: 2,
@@ -56,6 +60,7 @@ const PRESETS = [
   },
   {
     id: 'pes',
+    en: 'Pes anserine tendinitis / bursitis',
     title: '거위발 건염',
     sub: '거위발 점액낭염·건염',
     stage: 0,
@@ -65,6 +70,7 @@ const PRESETS = [
   },
   {
     id: 'itb',
+    en: 'Iliotibial band syndrome',
     title: '장경인대 증후군',
     sub: '장경인대 마찰 증후군',
     stage: 0,

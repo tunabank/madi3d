@@ -11,6 +11,7 @@ const CUFF = ['Supraspinatus_muscle', 'Infraspinatus_muscle', 'Teres_minor_muscl
 const PRESETS = [
   {
     id: 'cuff',
+    en: 'Rotator cuff',
     title: '회전근개란?',
     sub: '극상근·극하근·소원근·견갑하근',
     stage: 1,
@@ -20,6 +21,7 @@ const PRESETS = [
   },
   {
     id: 'cuff-tear',
+    en: 'Rotator cuff (supraspinatus) tear',
     title: '회전근개 파열',
     sub: '극상근 힘줄 파열',
     stage: 1,
@@ -30,6 +32,7 @@ const PRESETS = [
   },
   {
     id: 'impingement',
+    en: 'Subacromial impingement syndrome',
     title: '어깨 충돌 증후군',
     sub: '견봉하 충돌 증후군',
     stage: 1,
@@ -40,6 +43,7 @@ const PRESETS = [
   },
   {
     id: 'frozen',
+    en: 'Frozen shoulder (adhesive capsulitis)',
     title: '오십견',
     sub: '유착성 관절낭염',
     stage: 2,
@@ -50,6 +54,7 @@ const PRESETS = [
   },
   {
     id: 'biceps',
+    en: 'Long head of biceps tendinitis',
     title: '이두근 장두건염',
     sub: '상완이두근 장두건염',
     stage: 0,
@@ -60,6 +65,7 @@ const PRESETS = [
   },
   {
     id: 'labrum',
+    en: 'Glenoid labrum tear (SLAP)',
     title: '관절와순 파열',
     sub: '관절와순 손상(SLAP 등)',
     stage: 2,
@@ -73,6 +79,7 @@ const PRESETS = [
   },
   {
     id: 'ac',
+    en: 'Acromioclavicular joint injury',
     title: '견봉쇄골관절 손상',
     sub: 'AC 관절 탈구·염좌',
     stage: 2,

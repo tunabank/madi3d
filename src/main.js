@@ -193,18 +193,23 @@ controls.addEventListener('start', () => { camGoal = null; });
 
 // ---------- 정보 카드 ----------
 const info = document.getElementById('info');
-function showInfo(title, sub, desc) {
+function showInfo(title, sub, desc, en) {
   document.getElementById('infoTitle').textContent = title;
   document.getElementById('infoSub').textContent = sub || '';
+  document.getElementById('infoEn').textContent = en || '';
   document.getElementById('infoDesc').textContent = desc || '';
   info.classList.remove('hidden');
 }
 function hideInfo() { info.classList.add('hidden'); }
 document.getElementById('infoClose').onclick = () => { hideInfo(); state.selected = null; refresh(); };
 
+// 영어 명칭: 왼쪽 구조물은 끝의 ' L' 대신 '(left)', 오른쪽만 있는 부위는 그대로
+function partEn(m) {
+  return m.en.endsWith(' L') ? `${m.en.slice(0, -2)} (left)` : m.en;
+}
 function partLabel(id) {
   const m = state.region.parts.get(id).meta;
-  return state.medical ? [m.ko, m.easy] : [m.easy, m.ko];
+  return state.medical ? [m.ko, m.easy, partEn(m)] : [m.easy, m.ko, partEn(m)];
 }
 
 // ---------- 프리셋 ----------
@@ -214,7 +219,7 @@ function applyPreset(p) {
     state.stage = p.stage;
     lookFrom(p.view, p.dist);
     if (p.posture && state.region.posture) poseTo(Math.max(0, poseIndex(p.posture)));
-    showInfo(p.title, p.sub, p.desc);
+    showInfo(p.title, p.sub, p.desc, p.en);
   } else hideInfo();
   refresh();
 }
@@ -334,7 +339,7 @@ termBtn.onclick = () => {
   state.medical = !state.medical;
   termBtn.textContent = state.medical ? '의학 용어' : '쉬운 말';
   termBtn.classList.toggle('on', state.medical);
-  if (state.selected) { const [t, s] = partLabel(state.selected); showInfo(t, s, ''); }
+  if (state.selected) { const [t, s, en] = partLabel(state.selected); showInfo(t, s, '', en); }
 };
 document.getElementById('resetBtn').onclick = () => {
   state.stage = 0; state.preset = null; state.selected = null; hideInfo(); refresh();
@@ -359,8 +364,8 @@ canvas.addEventListener('pointerup', e => {
     .find(h => R.planes.every(pl => pl.distanceToPoint(h.point) >= 0)); // 잘려서 안 보이는 부분은 무시
   if (!hit) { state.selected = null; if (!state.preset) hideInfo(); refresh(); return; }
   state.selected = hit.object.userData.id;
-  const [t, s] = partLabel(state.selected);
-  showInfo(t, s, '');
+  const [t, s, en] = partLabel(state.selected);
+  showInfo(t, s, '', en);
   refresh();
 });
 
