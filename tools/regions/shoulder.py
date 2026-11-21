@@ -1,5 +1,5 @@
 # 어깨 뷰어에 들어갈 구조물 목록 (Z-Anatomy 오른쪽, ".r")
-# layer: skin / muscle_sup(겉근육) / muscle_deep(속근육) / ligament(인대·관절낭·연골·점액낭) / bone
+# layer: muscle_sup(겉근육) / muscle_deep(속근육) / ligament(인대·관절낭·연골·점액낭) / bone
 # easy: 환자용 쉬운 이름, ko: 의학 용어
 
 PARTS = [
@@ -54,25 +54,4 @@ PARTS = [
     ("Levator scapulae.r", "muscle_deep", "날개뼈 올리는 근육", "견갑거근"),
     ("Serratus anterior muscle.r", "muscle_deep", "옆구리 톱니 근육", "전거근"),
 
-    # --- 피부 ---
-    ("Deltoid region.r", "skin", "피부", "피부(어깨)"),
-    ("Pectoral region.r", "skin", "피부", "피부(가슴)"),
-    ("Scapular region.r", "skin", "피부", "피부(날개뼈)"),
-    ("Infrascapular region.r", "skin", "피부", "피부(날개뼈 아래)"),
-    ("Anterior region of arm.r", "skin", "피부", "피부(위팔 앞)"),
-    ("Posterior region of arm.r", "skin", "피부", "피부(위팔 뒤)"),
-    ("Mammary region.r", "skin", "피부", "피부(가슴)"),
-    ("Inframammary region.r", "skin", "피부", "피부(가슴 아래)"),
-    ("Infraclavicular fossa.r", "skin", "피부", "피부(빗장뼈 아래)"),
-    ("Greater supraclavicular fossa.r", "skin", "피부", "피부(빗장뼈 위)"),
-    ("Lesser supraclavicular fossa.r", "skin", "피부", "피부(빗장뼈 위 안쪽)"),
-    ("Lateral region of thorax.r", "skin", "피부", "피부(옆구리)"),
-    ("Interscapular region.r", "skin", "피부", "피부(날개뼈 사이)"),
-    ("Triangle of auscultation.r", "skin", "피부", "피부(날개뼈 아래 안쪽)"),
-    ("Lateral region of neck.r", "skin", "피부", "피부(목 옆)"),
-    ("Posterior region of neck.r", "skin", "피부", "피부(목 뒤)"),
-    ("Lateral bicipital groove.r", "skin", "피부", "피부(위팔 바깥)"),
-    ("Medial bicipital groove.r", "skin", "피부", "피부(위팔 안쪽)"),
-    ("Presternal region.r", "skin", "피부", "피부(가슴 가운데)"),
-    ("Vertebral region.r", "skin", "피부", "피부(등 가운데)"),
 ]

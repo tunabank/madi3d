@@ -43,14 +43,26 @@
     <footer class="layers">
       <div class="label">어디까지 벗겨볼까요?</div>
       <div class="seg" id="stageSeg">
-        <button data-stage="0">피부</button>
-        <button data-stage="1">겉근육</button>
-        <button data-stage="2">속근육</button>
-        <button data-stage="3">인대·연골판</button>
-        <button data-stage="4">뼈</button>
+        <button data-stage="0">겉근육</button>
+        <button data-stage="1">속근육</button>
+        <button data-stage="2">인대·연골판</button>
+        <button data-stage="3">뼈</button>
       </div>
       <label class="ghost"><input type="checkbox" id="ghostChk" checked /> 벗긴 층 흐리게 남기기</label>
     </footer>
+
+    <section id="posturePanel" class="posture hidden">
+      <div class="label">자세 보기</div>
+      <div class="seg" id="poseSeg">
+        <button data-pose="0">정상</button>
+        <button data-pose="1">일자목</button>
+        <button data-pose="2">거북목</button>
+      </div>
+      <input type="range" id="poseSlider" min="0" max="2" step="0.01" value="0" />
+      <button id="posePlay" class="pill play">▶ 정상 → 일자목 → 거북목</button>
+      <div class="readout"><b id="cobbVal"></b><b id="fwdVal"></b></div>
+      <div class="note">3D 모델 기준 대략적인 값</div>
+    </section>
 
     <button id="creditBtn" class="credit">출처</button>
     <div id="credit" class="modal hidden">

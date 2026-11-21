@@ -1,6 +1,6 @@
 // 무릎 — 모델·시점·자르기 범위·질환 프리셋
 // 질환 문구는 원장님이 직접 고치거나 항목을 추가하는 곳
-// stage: 0=피부부터 보기, 1=겉근육부터, 2=속근육부터, 3=인대·연골판부터, 4=뼈만
+// stage: 0=겉근육부터 보기, 1=속근육부터, 2=인대부터, 3=뼈만
 // view: 카메라 방향 [x, y, z]  (+x=안쪽, -x=바깥쪽, +z=앞, -z=뒤, +y=위)
 // highlight: 빨갛게 강조할 구조물 id / highlightMaterial: 재질 이름으로 강조(연골 등)
 // hide: 숨길 구조물 / ghost: 반투명으로 남길 구조물 / dist: 카메라 거리(기본 0.78, 작을수록 가까이)
@@ -15,7 +15,7 @@ const PRESETS = [
     id: 'acl',
     title: '앞 십자인대 파열',
     sub: '전방십자인대(ACL) 손상',
-    stage: 3,
+    stage: 2,
     hide: ['Patella', ...FRONT_SOFT],
     ghost: ['Femur'],
     highlight: ['Anterior_cruciate_ligament'],
@@ -27,7 +27,7 @@ const PRESETS = [
     id: 'meniscus',
     title: '연골판 파열',
     sub: '내측 반월상연골 손상',
-    stage: 3,
+    stage: 2,
     hide: ['Femur', 'Patella', ...FRONT_SOFT, 'Oblique_popliteal_ligament'],
     highlight: ['Medial_meniscus'],
     view: [0.1, 1, 0.3],
@@ -38,7 +38,7 @@ const PRESETS = [
     id: 'oa',
     title: '퇴행성 관절염',
     sub: '관절 연골 마모',
-    stage: 4,
+    stage: 3,
     ghost: ['Patella'],
     highlightMaterial: 'Cartilage',
     view: [0.6, 0.15, 1],
@@ -48,7 +48,7 @@ const PRESETS = [
     id: 'mcl',
     title: '안쪽 인대 손상',
     sub: '내측측부인대(MCL) 손상',
-    stage: 3,
+    stage: 2,
     hide: ['Anserine_bursa'],
     highlight: ['Superficial_part_of_tibial_collateral_ligament', 'Deep_part_of_tibial_collateral_ligament'],
     view: [1, 0.1, 0.25],
@@ -58,7 +58,7 @@ const PRESETS = [
     id: 'pes',
     title: '거위발 건염',
     sub: '거위발 점액낭염·건염',
-    stage: 1,
+    stage: 0,
     highlight: ['Sartorius_muscle', 'Gracilis_muscle', 'Semitendinosus_muscle', 'Anserine_bursa'],
     view: [1, 0, 0.45],
     desc: '허벅지 안쪽의 세 근육(봉공근·박근·반건양근) 힘줄이 정강이뼈 안쪽 아래에 함께 붙는 자리예요. 이곳 힘줄이나 물주머니에 염증이 생기면 무릎 안쪽 아래가 아파요.',
@@ -67,7 +67,7 @@ const PRESETS = [
     id: 'itb',
     title: '장경인대 증후군',
     sub: '장경인대 마찰 증후군',
-    stage: 1,
+    stage: 0,
     highlight: ['Iliotibial_tract'],
     view: [-1, 0.05, 0.25],
     desc: '허벅지 바깥쪽을 따라 무릎 아래까지 내려오는 두꺼운 띠예요. 달리기처럼 무릎을 반복해서 굽혔다 펼 때 무릎 바깥쪽에 통증이 생길 수 있어요.',
@@ -81,6 +81,7 @@ export default {
   centerIds: ['Medial_meniscus', 'Lateral_meniscus', 'Anterior_cruciate_ligament', 'Posterior_cruciate_ligament'],
   // 중심 기준 자르기: n 방향으로 o(m) 넘는 부분은 안 보이게
   clip: [{ n: [0, 1, 0], o: 0.24 }, { n: [0, -1, 0], o: 0.24 }],
+  ligamentLabel: '인대·연골판',
   viewDist: 0.78,
   views: [
     ['앞', [0.15, 0.1, 1]], ['안쪽', [1, 0.1, 0.15]], ['바깥쪽', [-1, 0.1, 0.15]],

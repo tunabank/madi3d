@@ -3,9 +3,10 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { REGIONS } from './regions/index.js';
+import { Posture } from './posture.js';
 
 const BASE = import.meta.env.BASE_URL;
-const LAYERS = ['skin', 'muscle_sup', 'muscle_deep', 'ligament', 'bone']; // 바깥 → 안
+const LAYERS = ['muscle_sup', 'muscle_deep', 'ligament', 'bone']; // 바깥 → 안
 const HI_COLOR = new THREE.Color(0xef4444);
 const SEL_COLOR = new THREE.Color(0xf59e0b);
 const GRAY = new THREE.Color(0x8a9099);
@@ -47,14 +48,16 @@ resize();
 
 // ---------- 색 ----------
 function baseColor(layer, mat) {
-  if (/^Bone/.test(mat)) return 0xeadfc8;
+  if (/^(Bone|Suture)/.test(mat)) return 0xeadfc8;
+  if (mat === 'Teeth') return 0xf6f3ea;
+  if (/^(Teeth-roots|Dentine)/.test(mat)) return 0xe8dcc0;
+  if (mat === 'White matter') return 0xf2d675; // 척수(신경)
   if (mat === 'Cartilage') return 0x8ec9e6;
   if (mat === 'Tendon') return 0xe6dfcb;
   if (mat === 'Ligament') return 0xd9c27a;
   if (mat === 'Articular capsule') return 0xd8cfb8;
   if (mat === 'Bursa') return 0xb79ad6;
   if (mat === 'Fat') return 0xf0cf6a;
-  if (/^Skin/.test(mat)) return 0xe3ad8f;
   if (layer === 'muscle_sup') return 0xb4483f;
   if (layer === 'muscle_deep') return 0x9a3a4a; // 속근육은 약간 짙은 색
   return 0xcccccc;
@@ -117,6 +120,7 @@ async function loadRegion(cfg) {
   gltf.scene.visible = false;
   scene.add(gltf.scene);
   const r = { cfg, group: gltf.scene, parts, meshes, center, planes, softIds: new Set(cfg.soft || []) };
+  if (cfg.posture) r.posture = new Posture(r);
   loaded.set(cfg.id, r);
   loadingEl.classList.add('hidden');
   return r;
@@ -139,14 +143,14 @@ function refresh() {
     let mode = 'solid';
     if (hide.has(id)) mode = 'hidden';
     else if (li < state.stage) // 벗긴 층: 바로 바깥 한 층만 흐리게 남기고 나머지는 숨김
-      mode = state.ghost && li === state.stage - 1 ? 'ghost' : 'hidden';
+      mode = state.ghost && !pr?.noGhost && li === state.stage - 1 ? 'ghost' : 'hidden';
     else if (ghost.has(id)) mode = 'ghost';
 
     // 물주머니·관절낭처럼 안쪽을 가리는 것은 평소 반투명 (강조·선택되면 진하게)
     const soft = mode === 'solid' && (matName === 'Bursa' || R.softIds.has(id)) && !hi.has(id) && state.selected !== id;
     m.visible = mode !== 'hidden';
     mat.transparent = mode === 'ghost' || soft;
-    mat.opacity = mode === 'ghost' ? (layer === 'skin' ? 0.08 : 0.13) : soft ? 0.35 : 1;
+    mat.opacity = mode === 'ghost' ? 0.13 : soft ? 0.35 : 1;
     mat.depthWrite = !mat.transparent;
     m.renderOrder = mat.transparent ? 2 : 0;
 
@@ -208,6 +212,7 @@ function applyPreset(p) {
   if (p) {
     state.stage = p.stage;
     lookFrom(p.view, p.dist);
+    if (p.posture && state.region.posture) poseTo(POSE_T[p.posture]);
     showInfo(p.title, p.sub, p.desc);
   } else hideInfo();
   refresh();
@@ -254,8 +259,12 @@ async function selectRegion(id) {
     b.onclick = () => applyPreset(state.preset?.id === p.id ? null : p);
     list.appendChild(b);
   }
-  // 층 버튼 이름: 인대 층이 무릎은 연골판, 어깨는 관절낭 위주
-  document.querySelector('#stageSeg [data-stage="3"]').textContent = cfg.id === 'knee' ? '인대·연골판' : '인대·관절낭';
+  // 자세 패널 (목만)
+  postureEl.classList.toggle('hidden', !R.posture);
+  if (R.posture) { poseQueue = []; setPose(0); }
+
+  // 층 버튼 이름: 인대 층에 무엇이 들어있는지 부위마다 다름 (무릎=연골판, 어깨=관절낭, 목=디스크)
+  document.querySelector('#stageSeg [data-stage="2"]').textContent = cfg.ligamentLabel || '인대';
 
   // 카메라: 처음엔 바로 배치, 부위를 바꿀 땐 새 중심으로 부드럽게
   if (first) {
@@ -265,6 +274,39 @@ async function selectRegion(id) {
   lookFrom(cfg.views[0][1]);
   refresh();
 }
+
+// ---------- 자세 애니메이션 (목) ----------
+const POSE_T = { normal: 0, straight: 1, forward: 2 };
+const postureEl = document.getElementById('posturePanel');
+const slider = document.getElementById('poseSlider');
+let poseQueue = []; // [{ to, hold }] 차례로 이동
+function setPose(t) {
+  const P = state.region?.posture; if (!P) return;
+  const { cobb, forwardMm } = P.apply(t);
+  slider.value = t;
+  document.getElementById('cobbVal').textContent =
+    cobb >= 0.5 ? `경추 전만각 ${cobb.toFixed(0)}°` : cobb <= -0.5 ? `경추 후만 ${(-cobb).toFixed(0)}°` : '경추 곡선 0° (일자)';
+  document.getElementById('fwdVal').textContent = forwardMm > 1 ? `머리 앞으로 +${forwardMm.toFixed(0)}mm` : '머리 위치 정상';
+  document.querySelectorAll('#poseSeg button').forEach(b => b.classList.toggle('on', Math.abs(+b.dataset.pose - t) < 0.01));
+}
+function poseTo(t) { poseQueue = [{ to: t, hold: 0 }]; }
+function stepPose(dt) {
+  const P = state.region?.posture; if (!P || !poseQueue.length) return;
+  const q = poseQueue[0];
+  if (Math.abs(P.t - q.to) < 1e-3) {
+    q.hold -= dt; if (q.hold <= 0) poseQueue.shift();
+    return;
+  }
+  const speed = 0.6; // 초당 자세 단계
+  const next = P.t + Math.sign(q.to - P.t) * Math.min(Math.abs(q.to - P.t), speed * dt);
+  setPose(next);
+}
+document.querySelectorAll('#poseSeg button').forEach(b => b.onclick = () => poseTo(+b.dataset.pose));
+slider.oninput = () => { poseQueue = []; setPose(+slider.value); };
+document.getElementById('posePlay').onclick = () => {
+  setPose(0);
+  poseQueue = [{ to: 0, hold: 0.6 }, { to: 1, hold: 1.2 }, { to: 2, hold: 0 }];
+};
 
 // ---------- 컨트롤 ----------
 document.querySelectorAll('#stageSeg button').forEach(b => b.onclick = () => {
@@ -280,6 +322,7 @@ termBtn.onclick = () => {
 };
 document.getElementById('resetBtn').onclick = () => {
   state.stage = 0; state.preset = null; state.selected = null; hideInfo(); refresh();
+  if (state.region.posture) poseTo(0);
   lookFrom(state.region.cfg.views[0][1]);
 };
 const credit = document.getElementById('credit');
@@ -306,7 +349,11 @@ canvas.addEventListener('pointerup', e => {
 });
 
 // ---------- 시작 ----------
-renderer.setAnimationLoop(() => { stepCamera(); controls.update(); renderer.render(scene, camera); });
+const clock = new THREE.Clock();
+renderer.setAnimationLoop(() => {
+  const dt = Math.min(clock.getDelta(), 0.1);
+  stepPose(dt); stepCamera(); controls.update(); renderer.render(scene, camera);
+});
 await selectRegion(location.hash.slice(1) || REGIONS[0].id);
 addEventListener('hashchange', () => {
   const id = location.hash.slice(1);
@@ -319,4 +366,4 @@ if (import.meta.env.PROD && !import.meta.env.VITE_MODEL_JSON && 'serviceWorker' 
 }
 
 // 테스트·디버그용
-window.__madi = { state, applyPreset, selectRegion, refresh, lookFrom, REGIONS, ready: true };
+window.__madi = { state, applyPreset, selectRegion, refresh, lookFrom, REGIONS, setPose, ready: true };

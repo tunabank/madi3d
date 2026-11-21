@@ -1,0 +1,1242 @@
+[
+ {
+  "id": "Atlas_(C1)",
+  "en": "Atlas (C1)",
+  "layer": "bone",
+  "easy": "1번 목뼈",
+  "ko": "환추(C1)",
+  "materials": [
+   "Bone-2",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Axis_(C2)",
+  "en": "Axis (C2)",
+  "layer": "bone",
+  "easy": "2번 목뼈",
+  "ko": "축추(C2)",
+  "materials": [
+   "Bone-2",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_C3",
+  "en": "Vertebra C3",
+  "layer": "bone",
+  "easy": "3번 목뼈",
+  "ko": "경추 C3",
+  "materials": [
+   "Bone-2",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_C4",
+  "en": "Vertebra C4",
+  "layer": "bone",
+  "easy": "4번 목뼈",
+  "ko": "경추 C4",
+  "materials": [
+   "Bone-2",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_C5",
+  "en": "Vertebra C5",
+  "layer": "bone",
+  "easy": "5번 목뼈",
+  "ko": "경추 C5",
+  "materials": [
+   "Bone-2",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_C6",
+  "en": "Vertebra C6",
+  "layer": "bone",
+  "easy": "6번 목뼈",
+  "ko": "경추 C6",
+  "materials": [
+   "Bone-2",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_C7",
+  "en": "Vertebra C7",
+  "layer": "bone",
+  "easy": "7번 목뼈",
+  "ko": "경추 C7(융추)",
+  "materials": [
+   "Bone-2",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_T1",
+  "en": "Vertebra T1",
+  "layer": "bone",
+  "easy": "1번 등뼈",
+  "ko": "흉추 T1",
+  "materials": [
+   "Bone-5",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_T2",
+  "en": "Vertebra T2",
+  "layer": "bone",
+  "easy": "2번 등뼈",
+  "ko": "흉추 T2",
+  "materials": [
+   "Bone-5",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_T3",
+  "en": "Vertebra T3",
+  "layer": "bone",
+  "easy": "3번 등뼈",
+  "ko": "흉추 T3",
+  "materials": [
+   "Bone-5",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Occipital_bone",
+  "en": "Occipital bone",
+  "layer": "bone",
+  "easy": "뒤통수뼈",
+  "ko": "후두골",
+  "materials": [
+   "Bone-6",
+   "Suture-1",
+   "Suture-2",
+   "Suture-4",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Frontal_bone",
+  "en": "Frontal bone",
+  "layer": "bone",
+  "easy": "이마뼈",
+  "ko": "전두골",
+  "materials": [
+   "Bone-3",
+   "Suture-1",
+   "Suture-2",
+   "Suture-4",
+   "Suture-6",
+   "Suture-7",
+   "Suture-5"
+  ]
+ },
+ {
+  "id": "Sphenoid_bone",
+  "en": "Sphenoid bone",
+  "layer": "bone",
+  "easy": "나비뼈",
+  "ko": "접형골",
+  "materials": [
+   "Bone-4",
+   "Suture-1",
+   "Suture-2",
+   "Suture-3",
+   "Suture-6",
+   "Suture-7",
+   "Suture-8"
+  ]
+ },
+ {
+  "id": "Ethmoid_bone",
+  "en": "Ethmoid bone",
+  "layer": "bone",
+  "easy": "벌집뼈",
+  "ko": "사골",
+  "materials": [
+   "Bone-7",
+   "Suture-3",
+   "Suture-5"
+  ]
+ },
+ {
+  "id": "Vomer",
+  "en": "Vomer",
+  "layer": "bone",
+  "easy": "코 가운데 뼈",
+  "ko": "서골",
+  "materials": [
+   "Bone-1"
+  ]
+ },
+ {
+  "id": "Mandible",
+  "en": "Mandible",
+  "layer": "bone",
+  "easy": "아래턱뼈",
+  "ko": "하악골",
+  "materials": [
+   "Bone",
+   "Cartilage",
+   "Suture-1"
+  ]
+ },
+ {
+  "id": "Hyoid_bone",
+  "en": "Hyoid bone",
+  "layer": "bone",
+  "easy": "목뿔뼈",
+  "ko": "설골",
+  "materials": [
+   "Bone"
+  ]
+ },
+ {
+  "id": "Parietal_bone",
+  "en": "Parietal bone",
+  "layer": "bone",
+  "easy": "정수리뼈",
+  "ko": "두정골",
+  "materials": [
+   "Bone-2",
+   "Suture-1",
+   "Suture-2",
+   "Suture-3",
+   "Suture-4",
+   "Suture-6"
+  ]
+ },
+ {
+  "id": "Parietal_bone_L",
+  "en": "Parietal bone L",
+  "layer": "bone",
+  "easy": "정수리뼈",
+  "ko": "두정골",
+  "materials": [
+   "Bone-2",
+   "Suture-1",
+   "Suture-2",
+   "Suture-3",
+   "Suture-6"
+  ]
+ },
+ {
+  "id": "Temporal_bone",
+  "en": "Temporal bone",
+  "layer": "bone",
+  "easy": "관자뼈",
+  "ko": "측두골",
+  "materials": [
+   "Bone-1",
+   "Suture-1",
+   "Suture-2",
+   "Suture-4",
+   "Suture-7",
+   "Cartilage",
+   "Suture-6"
+  ]
+ },
+ {
+  "id": "Temporal_bone_L",
+  "en": "Temporal bone L",
+  "layer": "bone",
+  "easy": "관자뼈",
+  "ko": "측두골",
+  "materials": [
+   "Bone-1",
+   "Suture-1",
+   "Suture-2",
+   "Suture-4",
+   "Suture-7",
+   "Cartilage",
+   "Suture-6"
+  ]
+ },
+ {
+  "id": "Zygomatic_bone",
+  "en": "Zygomatic bone",
+  "layer": "bone",
+  "easy": "광대뼈",
+  "ko": "관골",
+  "materials": [
+   "Bone-8",
+   "Suture-1",
+   "Suture-3",
+   "Suture-4",
+   "Suture-5"
+  ]
+ },
+ {
+  "id": "Zygomatic_bone_L",
+  "en": "Zygomatic bone L",
+  "layer": "bone",
+  "easy": "광대뼈",
+  "ko": "관골",
+  "materials": [
+   "Bone-8",
+   "Suture-1",
+   "Suture-3",
+   "Suture-4",
+   "Suture-5"
+  ]
+ },
+ {
+  "id": "Maxilla",
+  "en": "Maxilla",
+  "layer": "bone",
+  "easy": "위턱뼈",
+  "ko": "상악골",
+  "materials": [
+   "Bone-5",
+   "Suture",
+   "Suture-5",
+   "Suture-3",
+   "Suture-4",
+   "Suture-6",
+   "Suture-7",
+   "Suture-2"
+  ]
+ },
+ {
+  "id": "Maxilla_L",
+  "en": "Maxilla L",
+  "layer": "bone",
+  "easy": "위턱뼈",
+  "ko": "상악골",
+  "materials": [
+   "Bone-5",
+   "Suture",
+   "Suture-5",
+   "Suture-3",
+   "Suture-4",
+   "Suture-6",
+   "Suture-7",
+   "Suture-2"
+  ]
+ },
+ {
+  "id": "Nasal_bone",
+  "en": "Nasal bone",
+  "layer": "bone",
+  "easy": "코뼈",
+  "ko": "비골(코)",
+  "materials": [
+   "Bone-4",
+   "Suture-4",
+   "Suture-3",
+   "Suture-5"
+  ]
+ },
+ {
+  "id": "Nasal_bone_L",
+  "en": "Nasal bone L",
+  "layer": "bone",
+  "easy": "코뼈",
+  "ko": "비골(코)",
+  "materials": [
+   "Bone-4",
+   "Suture-4",
+   "Suture-3",
+   "Suture-5"
+  ]
+ },
+ {
+  "id": "Upper_medial_incisor",
+  "en": "Upper medial incisor",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Upper_medial_incisor_L",
+  "en": "Upper medial incisor L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Upper_lateral_incisor",
+  "en": "Upper lateral incisor",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Upper_lateral_incisor_L",
+  "en": "Upper lateral incisor L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Upper_canine",
+  "en": "Upper canine",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Upper_canine_L",
+  "en": "Upper canine L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Upper_first_premolar",
+  "en": "Upper first premolar",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Upper_first_premolar_L",
+  "en": "Upper first premolar L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Upper_second_premolar",
+  "en": "Upper second premolar",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Upper_second_premolar_L",
+  "en": "Upper second premolar L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Upper_first_molar_tooth",
+  "en": "Upper first molar tooth",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Upper_first_molar_tooth_L",
+  "en": "Upper first molar tooth L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Upper_second_molar_tooth",
+  "en": "Upper second molar tooth",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Upper_second_molar_tooth_L",
+  "en": "Upper second molar tooth L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_medial_incisor",
+  "en": "Lower medial incisor",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_medial_incisor_L",
+  "en": "Lower medial incisor L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_lateral_incisor",
+  "en": "Lower lateral incisor",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_lateral_incisor_L",
+  "en": "Lower lateral incisor L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_canine",
+  "en": "Lower canine",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_canine_L",
+  "en": "Lower canine L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_first_premolar",
+  "en": "Lower first premolar",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_first_premolar_L",
+  "en": "Lower first premolar L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_second_premolar",
+  "en": "Lower second premolar",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_second_premolar_L",
+  "en": "Lower second premolar L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_first_molar_tooth",
+  "en": "Lower first molar tooth",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Dentine",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_first_molar_tooth_L",
+  "en": "Lower first molar tooth L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Dentine",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_second_molar_tooth",
+  "en": "Lower second molar tooth",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Lower_second_molar_tooth_L",
+  "en": "Lower second molar tooth L",
+  "layer": "bone",
+  "easy": "치아",
+  "ko": "치아",
+  "materials": [
+   "Teeth",
+   "Teeth-roots"
+  ]
+ },
+ {
+  "id": "Manubrium_of_sternum",
+  "en": "Manubrium of sternum",
+  "layer": "bone",
+  "easy": "가슴뼈 윗부분",
+  "ko": "흉골병",
+  "materials": [
+   "Bone-6",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Clavicle",
+  "en": "Clavicle",
+  "layer": "bone",
+  "easy": "빗장뼈",
+  "ko": "쇄골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Clavicle_L",
+  "en": "Clavicle L",
+  "layer": "bone",
+  "easy": "빗장뼈",
+  "ko": "쇄골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "First_rib",
+  "en": "First rib",
+  "layer": "bone",
+  "easy": "첫째 갈비뼈",
+  "ko": "제1늑골",
+  "materials": [
+   "Bone-1",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "First_rib_L",
+  "en": "First rib L",
+  "layer": "bone",
+  "easy": "첫째 갈비뼈",
+  "ko": "제1늑골",
+  "materials": [
+   "Bone-1",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_C2-C3",
+  "en": "Intervertebral disc C2-C3",
+  "layer": "ligament",
+  "easy": "목 디스크 C2-3",
+  "ko": "추간판 C2-C3",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_C3-C4",
+  "en": "Intervertebral disc C3-C4",
+  "layer": "ligament",
+  "easy": "목 디스크 C3-4",
+  "ko": "추간판 C3-C4",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_C4-C5",
+  "en": "Intervertebral disc C4-C5",
+  "layer": "ligament",
+  "easy": "목 디스크 C4-5",
+  "ko": "추간판 C4-C5",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_C5-C6",
+  "en": "Intervertebral disc C5-C6",
+  "layer": "ligament",
+  "easy": "목 디스크 C5-6",
+  "ko": "추간판 C5-C6",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_C6-C7",
+  "en": "Intervertebral disc C6-C7",
+  "layer": "ligament",
+  "easy": "목 디스크 C6-7",
+  "ko": "추간판 C6-C7",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_C7-T1",
+  "en": "Intervertebral disc C7-T1",
+  "layer": "ligament",
+  "easy": "목 디스크 C7-T1",
+  "ko": "추간판 C7-T1",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_T1-T2",
+  "en": "Intervertebral disc T1-T2",
+  "layer": "ligament",
+  "easy": "등 디스크 T1-2",
+  "ko": "추간판 T1-T2",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_T2-T3",
+  "en": "Intervertebral disc T2-T3",
+  "layer": "ligament",
+  "easy": "등 디스크 T2-3",
+  "ko": "추간판 T2-T3",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Anterior_longitudinal_ligament",
+  "en": "Anterior longitudinal ligament",
+  "layer": "ligament",
+  "easy": "척추 앞 인대",
+  "ko": "전종인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Posterior_longitudinal_ligament",
+  "en": "Posterior longitudinal ligament",
+  "layer": "ligament",
+  "easy": "척추 뒤 인대(디스크 뒤)",
+  "ko": "후종인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Ligamenta_flava",
+  "en": "Ligamenta flava",
+  "layer": "ligament",
+  "easy": "척추관 뒤 노란 인대",
+  "ko": "황색인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Interspinous_ligaments",
+  "en": "Interspinous ligaments",
+  "layer": "ligament",
+  "easy": "가시돌기 사이 인대",
+  "ko": "극간인대",
+  "materials": [
+   "Ligament",
+   "Bone-1",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Supraspinous_ligament",
+  "en": "Supraspinous ligament",
+  "layer": "ligament",
+  "easy": "가시돌기 끝 인대",
+  "ko": "극상인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Nuchal_ligament",
+  "en": "Nuchal ligament",
+  "layer": "ligament",
+  "easy": "목덜미 인대",
+  "ko": "항인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "White_matter_of_spinal_cord",
+  "en": "White matter of spinal cord",
+  "layer": "ligament",
+  "easy": "척수(신경)",
+  "ko": "척수",
+  "materials": [
+   "White matter"
+  ]
+ },
+ {
+  "id": "Sternocleidomastoid_muscle",
+  "en": "Sternocleidomastoid muscle",
+  "layer": "muscle_sup",
+  "easy": "목 앞 비스듬한 근육",
+  "ko": "흉쇄유돌근",
+  "materials": [
+   "Internal rotator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Sternocleidomastoid_muscle_L",
+  "en": "Sternocleidomastoid muscle L",
+  "layer": "muscle_sup",
+  "easy": "목 앞 비스듬한 근육",
+  "ko": "흉쇄유돌근",
+  "materials": [
+   "Internal rotator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Descending_part_of_trapezius_muscle",
+  "en": "Descending part of trapezius muscle",
+  "layer": "muscle_sup",
+  "easy": "어깨 위 근육(승모근)",
+  "ko": "승모근 상부",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Descending_part_of_trapezius_muscle_L",
+  "en": "Descending part of trapezius muscle L",
+  "layer": "muscle_sup",
+  "easy": "어깨 위 근육(승모근)",
+  "ko": "승모근 상부",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Splenius_capitis_muscle",
+  "en": "Splenius capitis muscle",
+  "layer": "muscle_sup",
+  "easy": "목 뒤 근육(머리 쪽)",
+  "ko": "두판상근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Splenius_capitis_muscle_L",
+  "en": "Splenius capitis muscle L",
+  "layer": "muscle_sup",
+  "easy": "목 뒤 근육(머리 쪽)",
+  "ko": "두판상근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Levator_scapulae",
+  "en": "Levator scapulae",
+  "layer": "muscle_sup",
+  "easy": "날개뼈 올리는 근육",
+  "ko": "견갑거근",
+  "materials": [
+   "Levator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Levator_scapulae_L",
+  "en": "Levator scapulae L",
+  "layer": "muscle_sup",
+  "easy": "날개뼈 올리는 근육",
+  "ko": "견갑거근",
+  "materials": [
+   "Levator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Splenius_colli_muscle",
+  "en": "Splenius colli muscle",
+  "layer": "muscle_deep",
+  "easy": "목 뒤 근육(목 쪽)",
+  "ko": "경판상근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Splenius_colli_muscle_L",
+  "en": "Splenius colli muscle L",
+  "layer": "muscle_deep",
+  "easy": "목 뒤 근육(목 쪽)",
+  "ko": "경판상근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Semispinalis_colli_muscle",
+  "en": "Semispinalis colli muscle",
+  "layer": "muscle_deep",
+  "easy": "목 뒤 깊은 근육",
+  "ko": "경반극근",
+  "materials": [
+   "Internal rotator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Semispinalis_colli_muscle_L",
+  "en": "Semispinalis colli muscle L",
+  "layer": "muscle_deep",
+  "easy": "목 뒤 깊은 근육",
+  "ko": "경반극근",
+  "materials": [
+   "Internal rotator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Longissimus_capitis_muscle",
+  "en": "Longissimus capitis muscle",
+  "layer": "muscle_deep",
+  "easy": "목 뒤 긴 근육",
+  "ko": "두최장근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Longissimus_capitis_muscle_L",
+  "en": "Longissimus capitis muscle L",
+  "layer": "muscle_deep",
+  "easy": "목 뒤 긴 근육",
+  "ko": "두최장근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Multifidus_colli_muscle",
+  "en": "Multifidus colli muscle",
+  "layer": "muscle_deep",
+  "easy": "목뼈 사이 짧은 근육",
+  "ko": "다열근(경부)",
+  "materials": [
+   "Internal rotator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Multifidus_colli_muscle_L",
+  "en": "Multifidus colli muscle L",
+  "layer": "muscle_deep",
+  "easy": "목뼈 사이 짧은 근육",
+  "ko": "다열근(경부)",
+  "materials": [
+   "Internal rotator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Rectus_posterior_major_capitis_muscle",
+  "en": "Rectus posterior major capitis muscle",
+  "layer": "muscle_deep",
+  "easy": "뒤통수 아래 근육",
+  "ko": "대후두직근(후두하근)",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Rectus_posterior_major_capitis_muscle_L",
+  "en": "Rectus posterior major capitis muscle L",
+  "layer": "muscle_deep",
+  "easy": "뒤통수 아래 근육",
+  "ko": "대후두직근(후두하근)",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Rectus_posterior_minor_capitis_muscle",
+  "en": "Rectus posterior minor capitis muscle",
+  "layer": "muscle_deep",
+  "easy": "뒤통수 아래 작은 근육",
+  "ko": "소후두직근(후두하근)",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Rectus_posterior_minor_capitis_muscle_L",
+  "en": "Rectus posterior minor capitis muscle L",
+  "layer": "muscle_deep",
+  "easy": "뒤통수 아래 작은 근육",
+  "ko": "소후두직근(후두하근)",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Obliquus_superior_capitis_muscle",
+  "en": "Obliquus superior capitis muscle",
+  "layer": "muscle_deep",
+  "easy": "뒤통수 아래 비스듬한 근육(위)",
+  "ko": "상두사근(후두하근)",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Obliquus_superior_capitis_muscle_L",
+  "en": "Obliquus superior capitis muscle L",
+  "layer": "muscle_deep",
+  "easy": "뒤통수 아래 비스듬한 근육(위)",
+  "ko": "상두사근(후두하근)",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Obliquus_inferior_capitis_muscle",
+  "en": "Obliquus inferior capitis muscle",
+  "layer": "muscle_deep",
+  "easy": "뒤통수 아래 비스듬한 근육(아래)",
+  "ko": "하두사근(후두하근)",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Obliquus_inferior_capitis_muscle_L",
+  "en": "Obliquus inferior capitis muscle L",
+  "layer": "muscle_deep",
+  "easy": "뒤통수 아래 비스듬한 근육(아래)",
+  "ko": "하두사근(후두하근)",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Longus_colli_muscle",
+  "en": "Longus colli muscle",
+  "layer": "muscle_deep",
+  "easy": "목뼈 앞 깊은 근육",
+  "ko": "경장근(심부 굴곡근)",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Longus_colli_muscle_L",
+  "en": "Longus colli muscle L",
+  "layer": "muscle_deep",
+  "easy": "목뼈 앞 깊은 근육",
+  "ko": "경장근(심부 굴곡근)",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Longus_capitis_muscle",
+  "en": "Longus capitis muscle",
+  "layer": "muscle_deep",
+  "easy": "목뼈 앞 깊은 근육(머리 쪽)",
+  "ko": "두장근(심부 굴곡근)",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Longus_capitis_muscle_L",
+  "en": "Longus capitis muscle L",
+  "layer": "muscle_deep",
+  "easy": "목뼈 앞 깊은 근육(머리 쪽)",
+  "ko": "두장근(심부 굴곡근)",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Scalenus_anterior_muscle",
+  "en": "Scalenus anterior muscle",
+  "layer": "muscle_deep",
+  "easy": "목 옆 근육(앞)",
+  "ko": "전사각근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Scalenus_anterior_muscle_L",
+  "en": "Scalenus anterior muscle L",
+  "layer": "muscle_deep",
+  "easy": "목 옆 근육(앞)",
+  "ko": "전사각근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Scalenus_medius_muscle",
+  "en": "Scalenus medius muscle",
+  "layer": "muscle_deep",
+  "easy": "목 옆 근육(가운데)",
+  "ko": "중사각근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Scalenus_medius_muscle_L",
+  "en": "Scalenus medius muscle L",
+  "layer": "muscle_deep",
+  "easy": "목 옆 근육(가운데)",
+  "ko": "중사각근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Scalenus_posterior_muscle",
+  "en": "Scalenus posterior muscle",
+  "layer": "muscle_deep",
+  "easy": "목 옆 근육(뒤)",
+  "ko": "후사각근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Scalenus_posterior_muscle_L",
+  "en": "Scalenus posterior muscle L",
+  "layer": "muscle_deep",
+  "easy": "목 옆 근육(뒤)",
+  "ko": "후사각근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ }
+]

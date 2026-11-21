@@ -1,5 +1,5 @@
 # 무릎 뷰어에 들어갈 구조물 목록 (Z-Anatomy 오른쪽 다리, ".r")
-# layer: skin(피부) / muscle_sup(겉근육) / muscle_deep(속근육) / ligament(인대·연골판·점액낭) / bone(뼈)
+# layer: muscle_sup(겉근육) / muscle_deep(속근육) / ligament(인대·연골판·점액낭) / bone(뼈)
 # easy: 환자용 쉬운 이름, ko: 의학 용어
 
 PARTS = [
@@ -59,12 +59,4 @@ PARTS = [
     ("Fibularis brevis muscle.r", "muscle_deep", "종아리 바깥 깊은 근육", "단비골근"),
     ("Adductor magnus.r", "muscle_deep", "허벅지 안쪽 깊은 근육", "대내전근"),
 
-    # --- 피부 ---
-    ("Anterior region of thigh.r", "skin", "피부", "피부(허벅지 앞)"),
-    ("Posterior region of thigh.r", "skin", "피부", "피부(허벅지 뒤)"),
-    ("Anterior region of knee.r", "skin", "피부", "피부(무릎 앞)"),
-    ("Posterior region of knee.r", "skin", "피부", "피부(무릎 뒤)"),
-    ("Popliteal fossa.r", "skin", "피부", "피부(오금)"),
-    ("Anterior region of leg.r", "skin", "피부", "피부(종아리 앞)"),
-    ("Posterior region of leg.r", "skin", "피부", "피부(종아리 뒤)"),
 ]

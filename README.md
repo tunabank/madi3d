@@ -1,7 +1,9 @@
 # Madi 3D
 
 진료실에서 환자에게 관절 구조와 질환을 보여주는 three.js 웹앱 (서울마디튼튼의원).
-현재 부위: **무릎, 어깨** (주소 끝에 `#knee`, `#shoulder`를 붙이면 해당 부위로 바로 열림)
+현재 부위: **무릎, 어깨, 목** (주소 끝에 `#knee`, `#shoulder`, `#neck`을 붙이면 해당 부위로 바로 열림)
+
+목에는 **자세 애니메이션**(정상 → 일자목 → 거북목)이 있습니다. 경추를 분절마다 돌리고(거북목: 중·하부 경추 굴곡 + 상부 경추 신전), 근육·인대·디스크는 높이에 따라 함께 휘게 했습니다. 화면의 전만각·머리 이동 거리는 3D 모델 기준 근사값입니다.
 
 ## 실행
 
@@ -25,8 +27,9 @@ npm run build    # dist/ 생성 → Vercel에 그대로 배포
 | 경로 | 내용 |
 | --- | --- |
 | `src/main.js` | 뷰어 (부위 전환, 층 벗기기, 시점, 터치 이름 보기, 강조) |
-| `src/regions/knee.js`, `shoulder.js` | **부위 설정 + 질환 프리셋** — 문구·강조 부위·시점을 여기서 고침 |
+| `src/regions/knee.js`, `shoulder.js`, `neck.js` | **부위 설정 + 질환 프리셋** — 문구·강조 부위·시점을 여기서 고침 |
 | `src/regions/index.js` | 부위 목록 (탭 순서) |
+| `src/posture.js` | 목 자세 애니메이션 (경추 회전 체인 + 연조직 변형) |
 | `public/models/<부위>.glb` | 부위 모델 (Z-Anatomy에서 추출, meshopt 압축, 각 1MB 안팎) |
 | `public/models/<부위>.json` | 구조물 목록 (쉬운 이름 / 의학 용어 / 층) |
 | `public/sw.js`, `manifest.webmanifest`, `icons/` | 앱 설치(PWA)·오프라인 저장 |
@@ -56,7 +59,7 @@ cp build/shoulder.json public/models/
     (https://github.com/Z-Anatomy/Models-of-human-anatomy)
   - 그 원본: "BodyParts3D, © The Database Center for Life Science, CC BY-SA 2.1 Japan"
     (https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html)
-  - 수정 내용: 부위별(오른쪽 무릎·어깨) 구조물만 추출, 모디파이어 적용, 압축, 한국어 이름 추가
+  - 수정 내용: 부위별(오른쪽 무릎·어깨, 목) 구조물만 추출, 모디파이어 적용, 압축, 한국어 이름 추가
 - 이 모델을 재배포하거나 고쳐서 배포할 때는 위 출처 표기를 유지하고 같은 CC BY-SA 4.0으로 공개해야 합니다.
 - 앱 화면의 "출처" 버튼에도 같은 내용이 들어 있습니다.
 - 질환 설명 문구(`src/regions/*.js`)는 프로토타입용 초안이며 원장 검수가 필요합니다.

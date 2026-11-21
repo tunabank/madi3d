@@ -1,6 +1,6 @@
 // 어깨(오른쪽) — 모델·시점·자르기 범위·질환 프리셋
 // 질환 문구는 원장님이 직접 고치거나 항목을 추가하는 곳
-// stage: 0=피부부터 보기, 1=겉근육부터, 2=속근육부터, 3=인대·관절낭부터, 4=뼈만
+// stage: 0=겉근육부터 보기, 1=속근육부터, 2=인대부터, 3=뼈만
 // view: 카메라 방향 [x, y, z]  (-x=바깥쪽(팔 쪽), +x=몸 안쪽, +z=앞, -z=뒤, +y=위)
 // highlight: 빨갛게 강조 / hide: 숨김 / ghost: 반투명 / dist: 카메라 거리
 
@@ -13,7 +13,7 @@ const PRESETS = [
     id: 'cuff',
     title: '회전근개란?',
     sub: '극상근·극하근·소원근·견갑하근',
-    stage: 2,
+    stage: 1,
     highlight: CUFF,
     view: [-1, 0.35, 0.1],
     desc: '어깨뼈에서 시작해 위팔뼈 머리를 앞·위·뒤로 감싸는 네 개의 근육과 힘줄이에요. 팔을 들고 돌릴 때 위팔뼈 머리를 관절 소켓에 붙잡아 두는 역할을 해요.',
@@ -22,7 +22,7 @@ const PRESETS = [
     id: 'cuff-tear',
     title: '회전근개 파열',
     sub: '극상근 힘줄 파열',
-    stage: 2,
+    stage: 1,
     highlight: ['Supraspinatus_muscle'],
     view: [-0.75, 0.85, 0.15],
     dist: 0.6,
@@ -32,7 +32,7 @@ const PRESETS = [
     id: 'impingement',
     title: '어깨 충돌 증후군',
     sub: '견봉하 충돌 증후군',
-    stage: 2,
+    stage: 1,
     highlight: ['Supraspinatus_muscle', 'Subacromial_bursa', 'Subdeltoid_bursa', 'Coraco-acromial_ligament'],
     view: [-1, 0.45, 0.45],
     dist: 0.6,
@@ -42,7 +42,7 @@ const PRESETS = [
     id: 'frozen',
     title: '오십견',
     sub: '유착성 관절낭염',
-    stage: 3,
+    stage: 2,
     highlight: ['Articular_capsule_of_glenohumeral_joint'],
     view: [-0.6, 0.15, 1],
     dist: 0.55,
@@ -52,7 +52,7 @@ const PRESETS = [
     id: 'biceps',
     title: '이두근 장두건염',
     sub: '상완이두근 장두건염',
-    stage: 1,
+    stage: 0,
     hide: [...DELTOID, ...PEC_MAJOR],
     highlight: ['Long_head_of_biceps_brachii', 'Transverse_humeral_ligament'],
     view: [-0.35, 0.15, 1],
@@ -62,7 +62,7 @@ const PRESETS = [
     id: 'labrum',
     title: '관절와순 파열',
     sub: '관절와순 손상(SLAP 등)',
-    stage: 3,
+    stage: 2,
     hide: ['Humerus', 'Articular_capsule_of_glenohumeral_joint', 'Coracohumeral_ligament',
       'Superior_glenohumeral_ligament', 'Middle_glenohumeral_ligament', 'Inferior_glenohumeral_ligament',
       'Subacromial_bursa', 'Subdeltoid_bursa', 'Subcutaneous_acromial_bursa', 'Transverse_humeral_ligament'],
@@ -75,7 +75,7 @@ const PRESETS = [
     id: 'ac',
     title: '견봉쇄골관절 손상',
     sub: 'AC 관절 탈구·염좌',
-    stage: 3,
+    stage: 2,
     hide: ['Subcutaneous_acromial_bursa'],
     highlight: ['Acromioclavicular_ligament', 'Articular_capsule_of_acromioclavicular_joint', 'Trapezoid_ligament', 'Conoid_ligament'],
     view: [-0.35, 1, 0.5],
@@ -90,6 +90,7 @@ export default {
   centerIds: ['Glenoid_labrum', 'Subacromial_bursa', 'Coraco-acromial_ligament'],
   // 위(목 쪽) 0.12m, 아래(팔) 0.26m, 몸 안쪽 0.16m 넘는 부분은 자름
   clip: [{ n: [0, 1, 0], o: 0.12 }, { n: [0, -1, 0], o: 0.26 }, { n: [1, 0, 0], o: 0.16 }],
+  ligamentLabel: '인대·관절낭',
   viewDist: 0.8,
   views: [
     ['앞', [-0.35, 0.1, 1]], ['바깥쪽', [-1, 0.15, 0.15]], ['뒤', [-0.35, 0.15, -1]], ['위', [-0.3, 1, 0.15]],
