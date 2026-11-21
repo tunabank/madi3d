@@ -1,4 +1,5 @@
-// 질환 프리셋 — 원장님이 직접 문구를 고치거나 항목을 추가하는 파일
+// 무릎 — 모델·시점·자르기 범위·질환 프리셋
+// 질환 문구는 원장님이 직접 고치거나 항목을 추가하는 곳
 // stage: 0=피부부터 보기, 1=겉근육부터, 2=속근육부터, 3=인대·연골판부터, 4=뼈만
 // view: 카메라 방향 [x, y, z]  (+x=안쪽, -x=바깥쪽, +z=앞, -z=뒤, +y=위)
 // highlight: 빨갛게 강조할 구조물 id / highlightMaterial: 재질 이름으로 강조(연골 등)
@@ -9,7 +10,7 @@ const FRONT_SOFT = [
   'Subcutaneous_prepatellar_bursa', 'Deep_infrapatellar_bursa', 'Suprapatellar_bursa',
 ];
 
-export const PRESETS = [
+const PRESETS = [
   {
     id: 'acl',
     title: '앞 십자인대 파열',
@@ -72,3 +73,19 @@ export const PRESETS = [
     desc: '허벅지 바깥쪽을 따라 무릎 아래까지 내려오는 두꺼운 띠예요. 달리기처럼 무릎을 반복해서 굽혔다 펼 때 무릎 바깥쪽에 통증이 생길 수 있어요.',
   },
 ];
+
+export default {
+  id: 'knee',
+  title: '무릎',
+  // 화면 중심으로 삼을 구조물
+  centerIds: ['Medial_meniscus', 'Lateral_meniscus', 'Anterior_cruciate_ligament', 'Posterior_cruciate_ligament'],
+  // 중심 기준 자르기: n 방향으로 o(m) 넘는 부분은 안 보이게
+  clip: [{ n: [0, 1, 0], o: 0.24 }, { n: [0, -1, 0], o: 0.24 }],
+  viewDist: 0.78,
+  views: [
+    ['앞', [0.15, 0.1, 1]], ['안쪽', [1, 0.1, 0.15]], ['바깥쪽', [-1, 0.1, 0.15]],
+    ['뒤', [-0.1, 0.1, -1]], ['위', [0.1, 1, 0.35]],
+  ],
+  soft: [],
+  presets: PRESETS,
+};

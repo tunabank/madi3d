@@ -1,0 +1,702 @@
+[
+ {
+  "id": "Scapula",
+  "en": "Scapula",
+  "layer": "bone",
+  "easy": "어깨뼈(날개뼈)",
+  "ko": "견갑골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Clavicle",
+  "en": "Clavicle",
+  "layer": "bone",
+  "easy": "빗장뼈",
+  "ko": "쇄골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Humerus",
+  "en": "Humerus",
+  "layer": "bone",
+  "easy": "위팔뼈",
+  "ko": "상완골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Glenoid_labrum",
+  "en": "Glenoid labrum",
+  "layer": "ligament",
+  "easy": "어깨 관절 테두리 연골",
+  "ko": "관절와순",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Articular_capsule_of_glenohumeral_joint",
+  "en": "Articular capsule of glenohumeral joint",
+  "layer": "ligament",
+  "easy": "어깨 관절 주머니",
+  "ko": "견관절 관절낭",
+  "materials": [
+   "Articular capsule"
+  ]
+ },
+ {
+  "id": "Superior_glenohumeral_ligament",
+  "en": "Superior glenohumeral ligament",
+  "layer": "ligament",
+  "easy": "어깨 관절 인대(위)",
+  "ko": "상관절상완인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Middle_glenohumeral_ligament",
+  "en": "Middle glenohumeral ligament",
+  "layer": "ligament",
+  "easy": "어깨 관절 인대(가운데)",
+  "ko": "중관절상완인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Inferior_glenohumeral_ligament",
+  "en": "Inferior glenohumeral ligament",
+  "layer": "ligament",
+  "easy": "어깨 관절 인대(아래)",
+  "ko": "하관절상완인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Coracohumeral_ligament",
+  "en": "Coracohumeral ligament",
+  "layer": "ligament",
+  "easy": "부리돌기-위팔 인대",
+  "ko": "오구상완인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Coraco-acromial_ligament",
+  "en": "Coraco-acromial ligament",
+  "layer": "ligament",
+  "easy": "어깨 지붕 인대",
+  "ko": "오구견봉인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Acromioclavicular_ligament",
+  "en": "Acromioclavicular ligament",
+  "layer": "ligament",
+  "easy": "빗장뼈 끝 인대",
+  "ko": "견봉쇄골인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Articular_capsule_of_acromioclavicular_joint",
+  "en": "Articular capsule of acromioclavicular joint",
+  "layer": "ligament",
+  "easy": "빗장뼈 끝 관절 주머니",
+  "ko": "견봉쇄골관절 관절낭",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Trapezoid_ligament",
+  "en": "Trapezoid ligament",
+  "layer": "ligament",
+  "easy": "빗장뼈 고정 인대(바깥)",
+  "ko": "능형인대(오구쇄골인대)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Conoid_ligament",
+  "en": "Conoid ligament",
+  "layer": "ligament",
+  "easy": "빗장뼈 고정 인대(안쪽)",
+  "ko": "원추인대(오구쇄골인대)",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Transverse_humeral_ligament",
+  "en": "Transverse humeral ligament",
+  "layer": "ligament",
+  "easy": "이두근 힘줄 고정 인대",
+  "ko": "상완횡인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Subacromial_bursa",
+  "en": "Subacromial bursa",
+  "layer": "ligament",
+  "easy": "어깨 지붕 아래 물주머니",
+  "ko": "견봉하 점액낭",
+  "materials": [
+   "Bursa"
+  ]
+ },
+ {
+  "id": "Subdeltoid_bursa",
+  "en": "Subdeltoid bursa",
+  "layer": "ligament",
+  "easy": "삼각근 아래 물주머니",
+  "ko": "삼각근하 점액낭",
+  "materials": [
+   "Bursa"
+  ]
+ },
+ {
+  "id": "Subcutaneous_acromial_bursa",
+  "en": "Subcutaneous acromial bursa",
+  "layer": "ligament",
+  "easy": "어깨 끝 피부 아래 물주머니",
+  "ko": "피하 견봉 점액낭",
+  "materials": [
+   "Bursa"
+  ]
+ },
+ {
+  "id": "Clavicular_part_of_deltoid_muscle",
+  "en": "Clavicular part of deltoid muscle",
+  "layer": "muscle_sup",
+  "easy": "어깨 근육(앞)",
+  "ko": "삼각근 전방섬유",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Acromial_part_of_deltoid_muscle",
+  "en": "Acromial part of deltoid muscle",
+  "layer": "muscle_sup",
+  "easy": "어깨 근육(가운데)",
+  "ko": "삼각근 중간섬유",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Scapular_spinal_part_of_deltoid_muscle",
+  "en": "Scapular spinal part of deltoid muscle",
+  "layer": "muscle_sup",
+  "easy": "어깨 근육(뒤)",
+  "ko": "삼각근 후방섬유",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Descending_part_of_trapezius_muscle",
+  "en": "Descending part of trapezius muscle",
+  "layer": "muscle_sup",
+  "easy": "등 위쪽 근육(위)",
+  "ko": "승모근 상부",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Transverse_part_of_trapezius_muscle",
+  "en": "Transverse part of trapezius muscle",
+  "layer": "muscle_sup",
+  "easy": "등 위쪽 근육(가운데)",
+  "ko": "승모근 중부",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Ascending_part_of_trapezius_muscle",
+  "en": "Ascending part of trapezius muscle",
+  "layer": "muscle_sup",
+  "easy": "등 위쪽 근육(아래)",
+  "ko": "승모근 하부",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Clavicular_head_of_pectoralis_major_muscle",
+  "en": "Clavicular head of pectoralis major muscle",
+  "layer": "muscle_sup",
+  "easy": "가슴 근육(위)",
+  "ko": "대흉근 쇄골두",
+  "materials": [
+   "Adductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Sternocostal_head_of_pectoralis_major_muscle",
+  "en": "Sternocostal head of pectoralis major muscle",
+  "layer": "muscle_sup",
+  "easy": "가슴 근육",
+  "ko": "대흉근 흉늑부",
+  "materials": [
+   "Adductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Latissimus_dorsi_muscle",
+  "en": "Latissimus dorsi muscle",
+  "layer": "muscle_sup",
+  "easy": "넓은 등 근육",
+  "ko": "광배근",
+  "materials": [
+   "Adductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Long_head_of_biceps_brachii",
+  "en": "Long head of biceps brachii",
+  "layer": "muscle_sup",
+  "easy": "알통 근육(긴 갈래)",
+  "ko": "상완이두근 장두",
+  "materials": [
+   "Biarticular",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Short_head_of_biceps_brachii",
+  "en": "Short head of biceps brachii",
+  "layer": "muscle_sup",
+  "easy": "알통 근육(짧은 갈래)",
+  "ko": "상완이두근 단두",
+  "materials": [
+   "Biarticular",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Long_head_of_triceps_brachii",
+  "en": "Long head of triceps brachii",
+  "layer": "muscle_sup",
+  "easy": "팔 뒤 근육(긴 갈래)",
+  "ko": "상완삼두근 장두",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Lateral_head_of_triceps_brachii",
+  "en": "Lateral head of triceps brachii",
+  "layer": "muscle_sup",
+  "easy": "팔 뒤 근육(바깥 갈래)",
+  "ko": "상완삼두근 외측두",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Supraspinatus_muscle",
+  "en": "Supraspinatus muscle",
+  "layer": "muscle_deep",
+  "easy": "어깨 위 힘줄 근육",
+  "ko": "극상근 (회전근개)",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Infraspinatus_muscle",
+  "en": "Infraspinatus muscle",
+  "layer": "muscle_deep",
+  "easy": "어깨 뒤 힘줄 근육",
+  "ko": "극하근 (회전근개)",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Teres_minor_muscle",
+  "en": "Teres minor muscle",
+  "layer": "muscle_deep",
+  "easy": "어깨 뒤 작은 근육",
+  "ko": "소원근 (회전근개)",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Subscapularis_muscle",
+  "en": "Subscapularis muscle",
+  "layer": "muscle_deep",
+  "easy": "어깨 앞 힘줄 근육",
+  "ko": "견갑하근 (회전근개)",
+  "materials": [
+   "Internal rotator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Teres_major_muscle",
+  "en": "Teres major muscle",
+  "layer": "muscle_deep",
+  "easy": "겨드랑이 뒤 근육",
+  "ko": "대원근",
+  "materials": [
+   "Internal rotator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Pectoralis_minor_muscle",
+  "en": "Pectoralis minor muscle",
+  "layer": "muscle_deep",
+  "easy": "작은 가슴 근육",
+  "ko": "소흉근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Coracobrachialis_muscle",
+  "en": "Coracobrachialis muscle",
+  "layer": "muscle_deep",
+  "easy": "위팔 안쪽 근육",
+  "ko": "오구완근",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Medial_head_of_triceps_brachii",
+  "en": "Medial head of triceps brachii",
+  "layer": "muscle_deep",
+  "easy": "팔 뒤 근육(안쪽 갈래)",
+  "ko": "상완삼두근 내측두",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Rhomboid_major_muscle",
+  "en": "Rhomboid major muscle",
+  "layer": "muscle_deep",
+  "easy": "날개뼈 안쪽 근육",
+  "ko": "대능형근",
+  "materials": [
+   "Adductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Rhomboid_minor_muscle",
+  "en": "Rhomboid minor muscle",
+  "layer": "muscle_deep",
+  "easy": "날개뼈 안쪽 근육(위)",
+  "ko": "소능형근",
+  "materials": [
+   "Adductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Levator_scapulae",
+  "en": "Levator scapulae",
+  "layer": "muscle_deep",
+  "easy": "날개뼈 올리는 근육",
+  "ko": "견갑거근",
+  "materials": [
+   "Levator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Serratus_anterior_muscle",
+  "en": "Serratus anterior muscle",
+  "layer": "muscle_deep",
+  "easy": "옆구리 톱니 근육",
+  "ko": "전거근",
+  "materials": [
+   "Internal rotator",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Deltoid_region",
+  "en": "Deltoid region",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(어깨)",
+  "materials": [
+   "Skin-3",
+   "Skin-4",
+   "Skin-5",
+   "Skin-7",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Pectoral_region",
+  "en": "Pectoral region",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(가슴)",
+  "materials": [
+   "Skin-7",
+   "Skin-8",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Scapular_region",
+  "en": "Scapular region",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(날개뼈)",
+  "materials": [
+   "Skin-3",
+   "Skin-4",
+   "Skin-7",
+   "Skin-8",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Infrascapular_region",
+  "en": "Infrascapular region",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(날개뼈 아래)",
+  "materials": [
+   "Skin-7",
+   "Skin-8",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Anterior_region_of_arm",
+  "en": "Anterior region of arm",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(위팔 앞)",
+  "materials": [
+   "Skin-1",
+   "Skin-3",
+   "Skin-5",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Posterior_region_of_arm",
+  "en": "Posterior region of arm",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(위팔 뒤)",
+  "materials": [
+   "Skin-1",
+   "Skin-3",
+   "Skin-5",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Mammary_region",
+  "en": "Mammary region",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(가슴)",
+  "materials": [
+   "Skin-7",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Inframammary_region",
+  "en": "Inframammary region",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(가슴 아래)",
+  "materials": [
+   "Skin-7",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Infraclavicular_fossa",
+  "en": "Infraclavicular fossa",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(빗장뼈 아래)",
+  "materials": [
+   "Skin-4",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Greater_supraclavicular_fossa",
+  "en": "Greater supraclavicular fossa",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(빗장뼈 위)",
+  "materials": [
+   "Skin-4",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Lesser_supraclavicular_fossa",
+  "en": "Lesser supraclavicular fossa",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(빗장뼈 위 안쪽)",
+  "materials": [
+   "Skin-4",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Lateral_region_of_thorax",
+  "en": "Lateral region of thorax",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(옆구리)",
+  "materials": [
+   "Skin-8",
+   "Skin-7",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Interscapular_region",
+  "en": "Interscapular region",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(날개뼈 사이)",
+  "materials": [
+   "Skin-7",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Triangle_of_auscultation",
+  "en": "Triangle of auscultation",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(날개뼈 아래 안쪽)",
+  "materials": [
+   "Skin-7",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Lateral_region_of_neck",
+  "en": "Lateral region of neck",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(목 옆)",
+  "materials": [
+   "Skin-4",
+   "Skin-3",
+   "Skin-8",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Posterior_region_of_neck",
+  "en": "Posterior region of neck",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(목 뒤)",
+  "materials": [
+   "Skin-3",
+   "Skin-4",
+   "Skin-7",
+   "Skin-8",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Lateral_bicipital_groove",
+  "en": "Lateral bicipital groove",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(위팔 바깥)",
+  "materials": [
+   "Skin-1",
+   "Skin-3",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Medial_bicipital_groove",
+  "en": "Medial bicipital groove",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(위팔 안쪽)",
+  "materials": [
+   "Skin-5",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Presternal_region",
+  "en": "Presternal region",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(가슴 가운데)",
+  "materials": [
+   "Skin-4",
+   "Skin-7",
+   "Skin-in"
+  ]
+ },
+ {
+  "id": "Vertebral_region",
+  "en": "Vertebral region",
+  "layer": "skin",
+  "easy": "피부",
+  "ko": "피부(등 가운데)",
+  "materials": [
+   "Skin-1",
+   "Skin-3",
+   "Skin-7",
+   "Skin-in"
+  ]
+ }
+]

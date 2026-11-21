@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
-import { PRESETS } from './presets.js';
+import { REGIONS } from './regions/index.js';
 
 const BASE = import.meta.env.BASE_URL;
 const LAYERS = ['skin', 'muscle_sup', 'muscle_deep', 'ligament', 'bone']; // 바깥 → 안
@@ -11,6 +11,7 @@ const SEL_COLOR = new THREE.Color(0xf59e0b);
 const GRAY = new THREE.Color(0x8a9099);
 
 const state = {
+  region: null, // 현재 부위 (아래 loaded 항목)
   stage: 0, ghost: true, medical: false,
   preset: null, selected: null,
 };
@@ -35,11 +36,6 @@ controls.dampingFactor = 0.08;
 controls.minDistance = 0.15;
 controls.maxDistance = 1.4;
 
-// 무릎 주변만 보이도록 위·아래 자르기 (center 기준 ±CLIP)
-const CLIP = 0.24;
-const clipTop = new THREE.Plane(new THREE.Vector3(0, -1, 0), 0);
-const clipBottom = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
-
 function resize() {
   const w = canvas.clientWidth, h = canvas.clientHeight;
   renderer.setSize(w, h, false);
@@ -47,6 +43,7 @@ function resize() {
   camera.updateProjectionMatrix();
 }
 addEventListener('resize', resize);
+resize();
 
 // ---------- 색 ----------
 function baseColor(layer, mat) {
@@ -54,6 +51,7 @@ function baseColor(layer, mat) {
   if (mat === 'Cartilage') return 0x8ec9e6;
   if (mat === 'Tendon') return 0xe6dfcb;
   if (mat === 'Ligament') return 0xd9c27a;
+  if (mat === 'Articular capsule') return 0xd8cfb8;
   if (mat === 'Bursa') return 0xb79ad6;
   if (mat === 'Fat') return 0xf0cf6a;
   if (/^Skin/.test(mat)) return 0xe3ad8f;
@@ -62,61 +60,71 @@ function baseColor(layer, mat) {
   return 0xcccccc;
 }
 
-// ---------- 모델 로드 ----------
-const parts = new Map(); // id -> { meta, meshes: [] }
-const meshes = [];
-const center = new THREE.Vector3();
-let radius = 0.5;
-
-const meta = await fetch(`${BASE}models/parts.json`).then(r => r.json());
-for (const m of meta) parts.set(m.id, { meta: m, meshes: [] });
-
+// ---------- 부위 모델 로드 ----------
 const loader = new GLTFLoader();
 loader.setMeshoptDecoder(MeshoptDecoder);
-// 일반 배포: knee.glb / Claude 아티팩트 미리보기: .glb를 못 올려서 base64 JSON으로 감싼 파일 사용
-async function loadModel() {
+const loaded = new Map(); // region id -> { cfg, group, parts, meshes, center, planes, softIds }
+const loadingEl = document.getElementById('loading');
+
+// 일반 배포: <부위>.glb / Claude 아티팩트 미리보기: .glb를 못 올려서 base64 JSON으로 감싼 파일 사용
+async function loadGltf(id) {
   if (import.meta.env.VITE_MODEL_JSON) {
-    const { glb } = await fetch(`${BASE}models/knee.glb.json`).then(r => r.json());
+    const { glb } = await fetch(`${BASE}models/${id}.glb.json`).then(r => r.json());
     const bytes = Uint8Array.from(atob(glb), c => c.charCodeAt(0));
     return loader.parseAsync(bytes.buffer, '');
   }
-  return loader.loadAsync(`${BASE}models/knee.glb`);
+  return loader.loadAsync(`${BASE}models/${id}.glb`);
 }
-const gltf = await loadModel();
-scene.add(gltf.scene);
 
-gltf.scene.traverse(o => {
-  if (!o.isMesh) return;
-  let p = o, id = null;
-  while (p) { if (parts.has(p.name)) { id = p.name; break; } p = p.parent; }
-  if (!id) return;
-  const part = parts.get(id);
-  const matName = o.material?.name || '';
-  const color = new THREE.Color(baseColor(part.meta.layer, matName));
-  o.material = new THREE.MeshStandardMaterial({
-    color, roughness: part.meta.layer === 'bone' ? 0.75 : 0.55, metalness: 0,
-    side: THREE.DoubleSide, clippingPlanes: [clipTop, clipBottom],
+async function loadRegion(cfg) {
+  if (loaded.has(cfg.id)) return loaded.get(cfg.id);
+  loadingEl.classList.remove('hidden');
+  const [meta, gltf] = await Promise.all([
+    fetch(`${BASE}models/${cfg.id}.json`).then(r => r.json()),
+    loadGltf(cfg.id),
+  ]);
+  const parts = new Map(meta.map(m => [m.id, { meta: m, meshes: [] }]));
+  const meshes = [];
+  const planes = cfg.clip.map(() => new THREE.Plane());
+
+  gltf.scene.traverse(o => {
+    if (!o.isMesh) return;
+    let p = o, id = null;
+    while (p) { if (parts.has(p.name)) { id = p.name; break; } p = p.parent; }
+    if (!id) return;
+    const part = parts.get(id);
+    const matName = o.material?.name || '';
+    const color = new THREE.Color(baseColor(part.meta.layer, matName));
+    o.material = new THREE.MeshStandardMaterial({
+      color, roughness: part.meta.layer === 'bone' ? 0.75 : 0.55, metalness: 0,
+      side: THREE.DoubleSide, clippingPlanes: planes,
+    });
+    o.userData = { id, layer: part.meta.layer, matName, base: color };
+    part.meshes.push(o);
+    meshes.push(o);
   });
-  o.userData = { id, layer: part.meta.layer, matName, base: color };
-  part.meshes.push(o);
-  meshes.push(o);
-});
 
-// 무릎 중심 = 연골판 + 십자인대의 중심
-{
+  // 화면 중심 + 자르기 면
   const box = new THREE.Box3();
-  for (const id of ['Medial_meniscus', 'Lateral_meniscus', 'Anterior_cruciate_ligament', 'Posterior_cruciate_ligament'])
-    for (const m of parts.get(id)?.meshes || []) box.expandByObject(m);
-  box.getCenter(center);
-  radius = 0.5;
-  clipTop.constant = center.y + CLIP;
-  clipBottom.constant = -(center.y - CLIP);
+  for (const id of cfg.centerIds) for (const m of parts.get(id)?.meshes || []) box.expandByObject(m);
+  const center = box.getCenter(new THREE.Vector3());
+  cfg.clip.forEach(({ n, o }, i) => {
+    // n 방향으로 o 이상 나간 부분을 자름: 보이는 쪽은 -n·(p-center) + o >= 0
+    const normal = new THREE.Vector3(...n).negate();
+    planes[i].set(normal, o - normal.dot(center));
+  });
+
+  gltf.scene.visible = false;
+  scene.add(gltf.scene);
+  const r = { cfg, group: gltf.scene, parts, meshes, center, planes, softIds: new Set(cfg.soft || []) };
+  loaded.set(cfg.id, r);
+  loadingEl.classList.add('hidden');
+  return r;
 }
-document.getElementById('loading').remove();
-resize();
 
 // ---------- 화면 상태 반영 ----------
 function refresh() {
+  const R = state.region; if (!R) return;
   const pr = state.preset;
   const hi = new Set(pr?.highlight || []);
   const hiMat = pr?.highlightMaterial || null;
@@ -124,7 +132,7 @@ function refresh() {
   const ghost = new Set(pr?.ghost || []);
   const anyHi = hi.size > 0 || !!hiMat || !!state.selected;
 
-  for (const m of meshes) {
+  for (const m of R.meshes) {
     const { id, layer, matName, base } = m.userData;
     const li = LAYERS.indexOf(layer);
     const mat = m.material;
@@ -134,7 +142,8 @@ function refresh() {
       mode = state.ghost && li === state.stage - 1 ? 'ghost' : 'hidden';
     else if (ghost.has(id)) mode = 'ghost';
 
-    const soft = mode === 'solid' && matName === 'Bursa' && !hi.has(id) && state.selected !== id;
+    // 물주머니·관절낭처럼 안쪽을 가리는 것은 평소 반투명 (강조·선택되면 진하게)
+    const soft = mode === 'solid' && (matName === 'Bursa' || R.softIds.has(id)) && !hi.has(id) && state.selected !== id;
     m.visible = mode !== 'hidden';
     mat.transparent = mode === 'ghost' || soft;
     mat.opacity = mode === 'ghost' ? (layer === 'skin' ? 0.08 : 0.13) : soft ? 0.35 : 1;
@@ -161,19 +170,14 @@ function refresh() {
 }
 
 // ---------- 카메라 ----------
-const VIEWS = {
-  front: [0.15, 0.1, 1], medial: [1, 0.1, 0.15], lateral: [-1, 0.1, 0.15],
-  back: [-0.1, 0.1, -1], top: [0.1, 1, 0.35],
-};
 let camGoal = null;
-const VIEW_DIST = 0.78;
-function lookFrom(dir, dist = VIEW_DIST) {
-  camGoal = { dir: new THREE.Vector3(...dir).normalize(), dist };
+function lookFrom(dir, dist) {
+  camGoal = { dir: new THREE.Vector3(...dir).normalize(), dist: dist ?? state.region.cfg.viewDist };
 }
-// 다리 속을 뚫고 지나가지 않도록 무릎 중심을 기준으로 빙 돌아서 이동
+// 몸 속을 뚫고 지나가지 않도록 중심을 기준으로 빙 돌아서 이동
 function stepCamera() {
-  if (!camGoal) return;
-  controls.target.lerp(center, 0.15);
+  if (!camGoal || !state.region) return;
+  controls.target.lerp(state.region.center, 0.15);
   const off = camera.position.clone().sub(controls.target);
   const d = off.length();
   const dir = off.normalize().lerp(camGoal.dir, 0.12).normalize();
@@ -194,19 +198,11 @@ function hideInfo() { info.classList.add('hidden'); }
 document.getElementById('infoClose').onclick = () => { hideInfo(); state.selected = null; refresh(); };
 
 function partLabel(id) {
-  const m = parts.get(id).meta;
+  const m = state.region.parts.get(id).meta;
   return state.medical ? [m.ko, m.easy] : [m.easy, m.ko];
 }
 
 // ---------- 프리셋 ----------
-const list = document.getElementById('presetList');
-for (const p of PRESETS) {
-  const b = document.createElement('button');
-  b.className = 'preset'; b.dataset.id = p.id;
-  b.innerHTML = `<b>${p.title}</b><small>${p.sub}</small>`;
-  b.onclick = () => applyPreset(state.preset?.id === p.id ? null : p);
-  list.appendChild(b);
-}
 function applyPreset(p) {
   state.preset = p; state.selected = null;
   if (p) {
@@ -217,12 +213,64 @@ function applyPreset(p) {
   refresh();
 }
 
+// ---------- 부위 전환 ----------
+const tabs = document.getElementById('regionTabs');
+for (const cfg of REGIONS) {
+  const b = document.createElement('button');
+  b.textContent = cfg.title; b.dataset.region = cfg.id;
+  b.onclick = () => selectRegion(cfg.id);
+  tabs.appendChild(b);
+}
+
+async function selectRegion(id) {
+  const cfg = REGIONS.find(r => r.id === id) || REGIONS[0];
+  const R = await loadRegion(cfg);
+  if (state.region) state.region.group.visible = false;
+  const first = !state.region;
+  state.region = R;
+  R.group.visible = true;
+  state.stage = 0; state.preset = null; state.selected = null;
+  hideInfo();
+
+  tabs.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.region === cfg.id));
+  document.title = `Madi 3D · ${cfg.title}`;
+  try { history.replaceState(null, '', `#${cfg.id}`); } catch { /* 미리보기 환경 등 */ }
+
+  // 시점 버튼
+  const views = document.getElementById('views');
+  views.innerHTML = '';
+  for (const [label, dir] of cfg.views) {
+    const b = document.createElement('button');
+    b.textContent = label; b.onclick = () => lookFrom(dir);
+    views.appendChild(b);
+  }
+  // 질환 버튼
+  const list = document.getElementById('presetList');
+  list.innerHTML = '';
+  for (const p of cfg.presets) {
+    const b = document.createElement('button');
+    b.className = 'preset'; b.dataset.id = p.id;
+    b.innerHTML = `<b>${p.title}</b><small>${p.sub}</small>`;
+    b.onclick = () => applyPreset(state.preset?.id === p.id ? null : p);
+    list.appendChild(b);
+  }
+  // 층 버튼 이름: 인대 층이 무릎은 연골판, 어깨는 관절낭 위주
+  document.querySelector('#stageSeg [data-stage="3"]').textContent = cfg.id === 'knee' ? '인대·연골판' : '인대·관절낭';
+
+  // 카메라: 처음엔 바로 배치, 부위를 바꿀 땐 새 중심으로 부드럽게
+  if (first) {
+    camera.position.copy(R.center).add(new THREE.Vector3(...cfg.views[0][1]).normalize().multiplyScalar(cfg.viewDist * 1.3));
+    controls.target.copy(R.center);
+  }
+  lookFrom(cfg.views[0][1]);
+  refresh();
+}
+
 // ---------- 컨트롤 ----------
 document.querySelectorAll('#stageSeg button').forEach(b => b.onclick = () => {
   state.stage = +b.dataset.stage; refresh();
 });
 document.getElementById('ghostChk').onchange = e => { state.ghost = e.target.checked; refresh(); };
-document.querySelectorAll('[data-view]').forEach(b => b.onclick = () => lookFrom(VIEWS[b.dataset.view]));
 const termBtn = document.getElementById('termToggle');
 termBtn.onclick = () => {
   state.medical = !state.medical;
@@ -231,7 +279,8 @@ termBtn.onclick = () => {
   if (state.selected) { const [t, s] = partLabel(state.selected); showInfo(t, s, ''); }
 };
 document.getElementById('resetBtn').onclick = () => {
-  state.stage = 0; state.preset = null; state.selected = null; hideInfo(); refresh(); lookFrom(VIEWS.front);
+  state.stage = 0; state.preset = null; state.selected = null; hideInfo(); refresh();
+  lookFrom(state.region.cfg.views[0][1]);
 };
 const credit = document.getElementById('credit');
 document.getElementById('creditBtn').onclick = () => credit.classList.remove('hidden');
@@ -242,12 +291,13 @@ const ray = new THREE.Raycaster();
 let down = null;
 canvas.addEventListener('pointerdown', e => { down = [e.clientX, e.clientY]; });
 canvas.addEventListener('pointerup', e => {
-  if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 6) return;
-  const r = canvas.getBoundingClientRect();
-  ray.setFromCamera(new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1), camera);
-  const targets = meshes.filter(m => m.visible && (!m.material.transparent || m.userData.matName === 'Bursa'));
+  const R = state.region;
+  if (!R || !down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 6) return;
+  const rect = canvas.getBoundingClientRect();
+  ray.setFromCamera(new THREE.Vector2(((e.clientX - rect.left) / rect.width) * 2 - 1, -((e.clientY - rect.top) / rect.height) * 2 + 1), camera);
+  const targets = R.meshes.filter(m => m.visible && (!m.material.transparent || m.userData.matName === 'Bursa' || R.softIds.has(m.userData.id)));
   const hit = ray.intersectObjects(targets, false)
-    .find(h => Math.abs(h.point.y - center.y) < CLIP); // 잘려서 안 보이는 부분은 무시
+    .find(h => R.planes.every(pl => pl.distanceToPoint(h.point) >= 0)); // 잘려서 안 보이는 부분은 무시
   if (!hit) { state.selected = null; if (!state.preset) hideInfo(); refresh(); return; }
   state.selected = hit.object.userData.id;
   const [t, s] = partLabel(state.selected);
@@ -256,11 +306,12 @@ canvas.addEventListener('pointerup', e => {
 });
 
 // ---------- 시작 ----------
-camera.position.copy(center).add(new THREE.Vector3(0.5, 0.2, 1).normalize().multiplyScalar(VIEW_DIST * 1.3));
-controls.target.copy(center);
-lookFrom(VIEWS.front);
-refresh();
 renderer.setAnimationLoop(() => { stepCamera(); controls.update(); renderer.render(scene, camera); });
+await selectRegion(location.hash.slice(1) || REGIONS[0].id);
+addEventListener('hashchange', () => {
+  const id = location.hash.slice(1);
+  if (id && id !== state.region?.cfg.id && REGIONS.some(r => r.id === id)) selectRegion(id);
+});
 
 // 앱 설치(PWA)·오프라인 저장 — 배포 버전에서만, 미리보기 환경에서는 조용히 건너뜀
 if (import.meta.env.PROD && !import.meta.env.VITE_MODEL_JSON && 'serviceWorker' in navigator) {
@@ -268,4 +319,4 @@ if (import.meta.env.PROD && !import.meta.env.VITE_MODEL_JSON && 'serviceWorker' 
 }
 
 // 테스트·디버그용
-window.__knee = { state, applyPreset, refresh, PRESETS, lookFrom, VIEWS, ready: true };
+window.__madi = { state, applyPreset, selectRegion, refresh, lookFrom, REGIONS, ready: true };

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>Madi 3D · 무릎</title>
+  <title>Madi 3D</title>
   <meta name="theme-color" content="#12161c" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
@@ -19,14 +19,9 @@
     <canvas id="c"></canvas>
 
     <header class="top">
-      <div class="brand">Madi 3D <span>무릎</span></div>
-      <div class="views">
-        <button data-view="front">앞</button>
-        <button data-view="medial">안쪽</button>
-        <button data-view="lateral">바깥쪽</button>
-        <button data-view="back">뒤</button>
-        <button data-view="top">위</button>
-      </div>
+      <div class="brand">Madi 3D</div>
+      <div class="regions" id="regionTabs"></div>
+      <div class="views" id="views"></div>
       <div class="right">
         <button id="termToggle" class="pill">쉬운 말</button>
         <button id="resetBtn" class="pill">처음으로</button>
@@ -65,12 +60,12 @@
           <a href="https://github.com/Z-Anatomy/Models-of-human-anatomy" target="_blank">github.com/Z-Anatomy</a></p>
         <p><b>BodyParts3D</b>, © The Database Center for Life Science — CC BY-SA 2.1 Japan<br>
           <a href="https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html" target="_blank">dbarchive.biosciencedbc.jp</a></p>
-        <p>이 앱의 무릎 모델(knee.glb)은 위 원본에서 무릎 부위만 잘라내고 압축한 수정본이며, 같은 CC BY-SA 4.0 라이선스로 공개합니다.</p>
+        <p>이 앱의 부위별 모델(knee.glb, shoulder.glb 등)은 위 원본에서 해당 부위만 잘라내고 압축한 수정본이며, 같은 CC BY-SA 4.0 라이선스로 공개합니다.</p>
         <button id="creditClose" class="pill">닫기</button>
       </div>
     </div>
 
-    <div id="loading" class="loading">모델 불러오는 중…</div>
+    <div id="loading" class="loading hidden">모델 불러오는 중…</div>
   </div>
   <script type="module" src="/src/main.js"></script>
 </body>
