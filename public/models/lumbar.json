@@ -1,0 +1,638 @@
+[
+ {
+  "id": "Vertebra_T10",
+  "en": "Vertebra T10",
+  "layer": "bone",
+  "easy": "10번 등뼈",
+  "ko": "흉추 T10",
+  "materials": [
+   "Bone-5",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_T11",
+  "en": "Vertebra T11",
+  "layer": "bone",
+  "easy": "11번 등뼈",
+  "ko": "흉추 T11",
+  "materials": [
+   "Bone-5",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_T12",
+  "en": "Vertebra T12",
+  "layer": "bone",
+  "easy": "12번 등뼈",
+  "ko": "흉추 T12",
+  "materials": [
+   "Bone-5",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_L1",
+  "en": "Vertebra L1",
+  "layer": "bone",
+  "easy": "1번 허리뼈",
+  "ko": "요추 L1",
+  "materials": [
+   "Bone-2",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_L2",
+  "en": "Vertebra L2",
+  "layer": "bone",
+  "easy": "2번 허리뼈",
+  "ko": "요추 L2",
+  "materials": [
+   "Bone-2",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_L3",
+  "en": "Vertebra L3",
+  "layer": "bone",
+  "easy": "3번 허리뼈",
+  "ko": "요추 L3",
+  "materials": [
+   "Bone-2",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_L4",
+  "en": "Vertebra L4",
+  "layer": "bone",
+  "easy": "4번 허리뼈",
+  "ko": "요추 L4",
+  "materials": [
+   "Bone-2",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Vertebra_L5",
+  "en": "Vertebra L5",
+  "layer": "bone",
+  "easy": "5번 허리뼈",
+  "ko": "요추 L5",
+  "materials": [
+   "Bone-2",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Sacrum",
+  "en": "Sacrum",
+  "layer": "bone",
+  "easy": "엉치뼈",
+  "ko": "천골",
+  "materials": [
+   "Bone-5",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Coccyx",
+  "en": "Coccyx",
+  "layer": "bone",
+  "easy": "꼬리뼈",
+  "ko": "미골",
+  "materials": [
+   "Bone-5",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Hip_bone",
+  "en": "Hip bone",
+  "layer": "bone",
+  "easy": "골반뼈",
+  "ko": "관골",
+  "materials": [
+   "Bone-1",
+   "Bone-6",
+   "Bone-7",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Hip_bone_L",
+  "en": "Hip bone L",
+  "layer": "bone",
+  "easy": "골반뼈",
+  "ko": "관골",
+  "materials": [
+   "Bone-1",
+   "Bone-6",
+   "Bone-7",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Femur",
+  "en": "Femur",
+  "layer": "bone",
+  "easy": "허벅지뼈",
+  "ko": "대퇴골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Femur_L",
+  "en": "Femur L",
+  "layer": "bone",
+  "easy": "허벅지뼈",
+  "ko": "대퇴골",
+  "materials": [
+   "Bone",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_T10-T11",
+  "en": "Intervertebral disc T10-T11",
+  "layer": "ligament",
+  "easy": "등 디스크 T10-11",
+  "ko": "추간판 T10-T11",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_T11-T12",
+  "en": "Intervertebral disc T11-T12",
+  "layer": "ligament",
+  "easy": "등 디스크 T11-12",
+  "ko": "추간판 T11-T12",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_T12-L1",
+  "en": "Intervertebral disc T12-L1",
+  "layer": "ligament",
+  "easy": "디스크 T12-L1",
+  "ko": "추간판 T12-L1",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_L1-L2",
+  "en": "Intervertebral disc L1-L2",
+  "layer": "ligament",
+  "easy": "허리 디스크 L1-2",
+  "ko": "추간판 L1-L2",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_L2-L3",
+  "en": "Intervertebral disc L2-L3",
+  "layer": "ligament",
+  "easy": "허리 디스크 L2-3",
+  "ko": "추간판 L2-L3",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_L3-L4",
+  "en": "Intervertebral disc L3-L4",
+  "layer": "ligament",
+  "easy": "허리 디스크 L3-4",
+  "ko": "추간판 L3-L4",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_L4-L5",
+  "en": "Intervertebral disc L4-L5",
+  "layer": "ligament",
+  "easy": "허리 디스크 L4-5",
+  "ko": "추간판 L4-L5",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Intervertebral_disc_L5-S1",
+  "en": "Intervertebral disc L5-S1",
+  "layer": "ligament",
+  "easy": "허리 디스크 L5-S1",
+  "ko": "추간판 L5-S1",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Anterior_longitudinal_ligament",
+  "en": "Anterior longitudinal ligament",
+  "layer": "ligament",
+  "easy": "척추 앞 인대",
+  "ko": "전종인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Posterior_longitudinal_ligament",
+  "en": "Posterior longitudinal ligament",
+  "layer": "ligament",
+  "easy": "척추 뒤 인대(디스크 뒤)",
+  "ko": "후종인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Ligamenta_flava",
+  "en": "Ligamenta flava",
+  "layer": "ligament",
+  "easy": "척추관 뒤 노란 인대",
+  "ko": "황색인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Interspinous_ligaments",
+  "en": "Interspinous ligaments",
+  "layer": "ligament",
+  "easy": "가시돌기 사이 인대",
+  "ko": "극간인대",
+  "materials": [
+   "Ligament",
+   "Bone-1",
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Supraspinous_ligament",
+  "en": "Supraspinous ligament",
+  "layer": "ligament",
+  "easy": "가시돌기 끝 인대",
+  "ko": "극상인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Iliolumbar_ligament",
+  "en": "Iliolumbar ligament",
+  "layer": "ligament",
+  "easy": "허리뼈-골반 인대",
+  "ko": "장요인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Iliolumbar_ligament_L",
+  "en": "Iliolumbar ligament L",
+  "layer": "ligament",
+  "easy": "허리뼈-골반 인대",
+  "ko": "장요인대",
+  "materials": [
+   "Ligament"
+  ]
+ },
+ {
+  "id": "Pubic_symphysis",
+  "en": "Pubic symphysis",
+  "layer": "ligament",
+  "easy": "골반 앞 연결 연골",
+  "ko": "치골결합",
+  "materials": [
+   "Cartilage"
+  ]
+ },
+ {
+  "id": "Spinal_dura",
+  "en": "Spinal dura",
+  "layer": "ligament",
+  "easy": "신경 주머니(척수막)",
+  "ko": "경막(경막낭)",
+  "materials": [
+   "Fascia"
+  ]
+ },
+ {
+  "id": "Spinal_ganglion",
+  "en": "Spinal ganglion",
+  "layer": "ligament",
+  "easy": "신경 뿌리 마디",
+  "ko": "척수신경절",
+  "materials": [
+   "Nerve"
+  ]
+ },
+ {
+  "id": "Spinal_ganglion_L",
+  "en": "Spinal ganglion L",
+  "layer": "ligament",
+  "easy": "신경 뿌리 마디",
+  "ko": "척수신경절",
+  "materials": [
+   "Nerve"
+  ]
+ },
+ {
+  "id": "Iliocostalis_lumborum_muscle",
+  "en": "Iliocostalis lumborum muscle",
+  "layer": "muscle_sup",
+  "easy": "허리 세움 근육(바깥)",
+  "ko": "요장늑근(척추기립근)",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Iliocostalis_lumborum_muscle_L",
+  "en": "Iliocostalis lumborum muscle L",
+  "layer": "muscle_sup",
+  "easy": "허리 세움 근육(바깥)",
+  "ko": "요장늑근(척추기립근)",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Longissimus_thoracis_muscle",
+  "en": "Longissimus thoracis muscle",
+  "layer": "muscle_sup",
+  "easy": "허리 세움 근육(가운데)",
+  "ko": "흉최장근(척추기립근)",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Longissimus_thoracis_muscle_L",
+  "en": "Longissimus thoracis muscle L",
+  "layer": "muscle_sup",
+  "easy": "허리 세움 근육(가운데)",
+  "ko": "흉최장근(척추기립근)",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Spinalis_thoracis_muscle",
+  "en": "Spinalis thoracis muscle",
+  "layer": "muscle_sup",
+  "easy": "허리 세움 근육(안쪽)",
+  "ko": "흉극근(척추기립근)",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Spinalis_thoracis_muscle_L",
+  "en": "Spinalis thoracis muscle L",
+  "layer": "muscle_sup",
+  "easy": "허리 세움 근육(안쪽)",
+  "ko": "흉극근(척추기립근)",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Gluteus_maximus_muscle",
+  "en": "Gluteus maximus muscle",
+  "layer": "muscle_sup",
+  "easy": "엉덩이 큰 근육",
+  "ko": "대둔근",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Gluteus_maximus_muscle_L",
+  "en": "Gluteus maximus muscle L",
+  "layer": "muscle_sup",
+  "easy": "엉덩이 큰 근육",
+  "ko": "대둔근",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Gluteus_medius_muscle",
+  "en": "Gluteus medius muscle",
+  "layer": "muscle_sup",
+  "easy": "엉덩이 옆 근육",
+  "ko": "중둔근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Gluteus_medius_muscle_L",
+  "en": "Gluteus medius muscle L",
+  "layer": "muscle_sup",
+  "easy": "엉덩이 옆 근육",
+  "ko": "중둔근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Rectus_abdominis_muscle",
+  "en": "Rectus abdominis muscle",
+  "layer": "muscle_sup",
+  "easy": "배 앞 근육(복근)",
+  "ko": "복직근",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Rectus_abdominis_muscle_L",
+  "en": "Rectus abdominis muscle L",
+  "layer": "muscle_sup",
+  "easy": "배 앞 근육(복근)",
+  "ko": "복직근",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Multifidus_lumborum_muscle",
+  "en": "Multifidus lumborum muscle",
+  "layer": "muscle_deep",
+  "easy": "허리뼈 사이 짧은 근육",
+  "ko": "다열근(요부)",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Multifidus_lumborum_muscle_L",
+  "en": "Multifidus lumborum muscle L",
+  "layer": "muscle_deep",
+  "easy": "허리뼈 사이 짧은 근육",
+  "ko": "다열근(요부)",
+  "materials": [
+   "External rotation",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Quadratus_lumborum_muscle",
+  "en": "Quadratus lumborum muscle",
+  "layer": "muscle_deep",
+  "easy": "허리 옆 깊은 근육",
+  "ko": "요방형근",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Quadratus_lumborum_muscle_L",
+  "en": "Quadratus lumborum muscle L",
+  "layer": "muscle_deep",
+  "easy": "허리 옆 깊은 근육",
+  "ko": "요방형근",
+  "materials": [
+   "Extension",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Psoas_major",
+  "en": "Psoas major",
+  "layer": "muscle_deep",
+  "easy": "허리 앞 깊은 근육",
+  "ko": "대요근(장요근)",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Psoas_major_L",
+  "en": "Psoas major L",
+  "layer": "muscle_deep",
+  "easy": "허리 앞 깊은 근육",
+  "ko": "대요근(장요근)",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Iliacus_muscle",
+  "en": "Iliacus muscle",
+  "layer": "muscle_deep",
+  "easy": "골반 안쪽 근육",
+  "ko": "장골근(장요근)",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Iliacus_muscle_L",
+  "en": "Iliacus muscle L",
+  "layer": "muscle_deep",
+  "easy": "골반 안쪽 근육",
+  "ko": "장골근(장요근)",
+  "materials": [
+   "Flexion",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Transversus_abdominis_muscle",
+  "en": "Transversus abdominis muscle",
+  "layer": "muscle_deep",
+  "easy": "배를 감싸는 깊은 근육",
+  "ko": "복횡근",
+  "materials": [
+   "Orbicularis/Constrictor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Transversus_abdominis_muscle_L",
+  "en": "Transversus abdominis muscle L",
+  "layer": "muscle_deep",
+  "easy": "배를 감싸는 깊은 근육",
+  "ko": "복횡근",
+  "materials": [
+   "Orbicularis/Constrictor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Gluteus_minimus_muscle",
+  "en": "Gluteus minimus muscle",
+  "layer": "muscle_deep",
+  "easy": "엉덩이 깊은 근육",
+  "ko": "소둔근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Gluteus_minimus_muscle_L",
+  "en": "Gluteus minimus muscle L",
+  "layer": "muscle_deep",
+  "easy": "엉덩이 깊은 근육",
+  "ko": "소둔근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Piriformis_muscle",
+  "en": "Piriformis muscle",
+  "layer": "muscle_deep",
+  "easy": "엉덩이 속 근육",
+  "ko": "이상근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ },
+ {
+  "id": "Piriformis_muscle_L",
+  "en": "Piriformis muscle L",
+  "layer": "muscle_deep",
+  "easy": "엉덩이 속 근육",
+  "ko": "이상근",
+  "materials": [
+   "Abductor",
+   "Tendon"
+  ]
+ }
+]

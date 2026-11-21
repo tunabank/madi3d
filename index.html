@@ -53,13 +53,9 @@
 
     <section id="posturePanel" class="posture hidden">
       <div class="label">자세 보기</div>
-      <div class="seg" id="poseSeg">
-        <button data-pose="0">정상</button>
-        <button data-pose="1">일자목</button>
-        <button data-pose="2">거북목</button>
-      </div>
+      <div class="seg" id="poseSeg"></div>
       <input type="range" id="poseSlider" min="0" max="2" step="0.01" value="0" />
-      <button id="posePlay" class="pill play">▶ 정상 → 일자목 → 거북목</button>
+      <button id="posePlay" class="pill play"></button>
       <div class="readout"><b id="cobbVal"></b><b id="fwdVal"></b></div>
       <div class="note">3D 모델 기준 대략적인 값</div>
     </section>

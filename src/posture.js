@@ -1,7 +1,7 @@
-// 목 자세 애니메이션 — 경추를 관절처럼 하나씩 돌리고, 근육·인대·디스크는 높이에 따라 휘게 한다.
+// 척추 자세 애니메이션(목·허리 공용) — 척추를 관절처럼 하나씩 돌리고, 근육·인대·디스크는 높이에 따라 휘게 한다.
 //
-// 동작 방식
-// - joints: 아래(C7-T1)에서 위(머리-C1)로 이어진 관절. 각 관절은 앞으로 숙이는 방향(+)으로 회전.
+// 동작 방식 (부위 설정의 posture 항목을 따름)
+// - joints: 아래에서 위로 이어진 관절. 각 관절은 앞으로 숙이는 방향(+)으로 회전.
 // - 뼈(rigid): 어느 관절 위에 얹혀 있는지(level)에 따라 통째로 움직임. 0 = 고정.
 // - 나머지(근육·인대·디스크·척수): 정점 높이(y)에 따라 위·아래 두 단계의 움직임을 섞어서 휨.
 import * as THREE from 'three';
@@ -64,16 +64,29 @@ export class Posture {
       for (const m of R.parts.get(id).meshes) { m.geometry.computeBoundingBox(); b.union(m.geometry.boundingBox); }
       return b;
     };
+    // 여러 뼈의 맨 위쪽(depth 이내) 정점들의 평균점
+    const topCentroid = (ids, depth) => {
+      const geos = ids.flatMap(id => R.parts.get(id).meshes.map(m => m.geometry));
+      let top = -Infinity;
+      for (const g of geos) { g.computeBoundingBox(); top = Math.max(top, g.boundingBox.max.y); }
+      const c = new THREE.Vector3(); let n = 0; const v = new THREE.Vector3();
+      for (const g of geos) {
+        const pos = g.attributes.position;
+        for (let i = 0; i < pos.count; i++) { v.fromBufferAttribute(pos, i); if (v.y > top - depth) { c.add(v); n++; } }
+      }
+      return c.divideScalar(Math.max(n, 1));
+    };
     // 관절 회전 중심
     this.pivots = cfg.joints.map(j => {
       if (j.disc) return box(j.disc).getCenter(new THREE.Vector3());
+      if (j.topOf) return topCentroid(j.topOf, j.depth ?? 0.03); // 예: 양쪽 대퇴골두 → 고관절 중심
       const b = box(j.bone), c = b.getCenter(new THREE.Vector3());
       if (j.at === 'top') c.y = b.max.y;
       return c;
     });
     const nJ = this.pivots.length;
 
-    // 정상 모델의 경추 전만각(C2-C7 Cobb): C2-C3 디스크와 C7-T1 디스크의 기울기 차이
+    // 정상 모델의 전만각(Cobb): 위·아래 기준 디스크의 기울기 차이 (목 C2-C7, 허리 L1-S1)
     const geo = (id) => R.parts.get(id).meshes[0].geometry;
     this.baseLordosis = Math.abs(discTilt(geo(cfg.cobbUpper)) - discTilt(geo(cfg.cobbLower)));
 
@@ -88,7 +101,7 @@ export class Posture {
     for (const m of R.meshes) {
       const { id, layer } = m.userData;
       if (layer === 'bone') {
-        const lv = cfg.rigid[id] ?? (cfg.fixed.includes(id) ? 0 : nJ);
+        const lv = cfg.rigid[id] ?? (cfg.fixed.includes(id) ? 0 : (cfg.defaultLevel ?? nJ));
         this.rigid.push({ m, lv });
       } else {
         const pos = m.geometry.attributes.position;
@@ -112,25 +125,16 @@ export class Posture {
     this.apply(0);
   }
 
-  // 자세별 관절 각도(도). 관절 순서: C7-T1, C6-C7, C5-C6, C4-C5, C3-C4, C2-C3, C1-C2, 머리-C1
+  // 자세별 관절 각도(도) — 부위 설정의 poses[].angles(정상 전만각)로 계산
   buildPoses() {
-    const L = this.baseLordosis, s = L / 5;
-    const head = (a) => { const sum = a.reduce((x, y) => x + y, 0); return [...a, -sum * 0.4, -sum * 0.6]; };
-    return {
-      // 정상: 모델 그대로
-      normal: [0, 0, 0, 0, 0, 0, 0, 0],
-      // 일자목: C2-C7 전만을 0°로 (각 분절을 고르게 숙임), 시선 유지를 위해 머리-C2에서 그만큼 젖힘
-      straight: head([0, s, s, s, s, s]),
-      // 거북목: 중·하부 경추를 더 숙이고(+C7-T1), 상부 경추(머리-C2)에서 젖혀 시선을 유지
-      forward: head([10, s + 4, s + 4, s + 2, s, s - 2]),
-    };
+    return this.cfg.poses.map(p => p.angles(this.baseLordosis));
   }
 
-  // t: 0=정상, 1=일자목, 2=거북목 (사이 값은 섞음)
+  // t: 0 = 첫 자세, 1 = 둘째 자세, ... (사이 값은 앞뒤 자세를 섞음)
   angles(t) {
-    const { normal, straight, forward } = this.poses;
-    const [a, b, f] = t <= 1 ? [normal, straight, t] : [straight, forward, t - 1];
-    return a.map((x, i) => x + (b[i] - x) * f);
+    const P = this.poses, i = Math.min(Math.floor(t), P.length - 2), f = t - i;
+    if (P.length === 1) return P[0];
+    return P[i].map((x, k) => x + (P[i + 1][k] - x) * f);
   }
 
   apply(t) {
@@ -167,8 +171,9 @@ export class Posture {
     }
 
     // 화면에 보여줄 수치
-    const cobb = this.baseLordosis - ang.slice(1, 6).reduce((x, y) => x + y, 0); // C2-3 ~ C6-7 분절
-    const head = this.headPt.clone().applyMatrix4(this.mats[this.mats.length - 1]);
-    return { cobb, forwardMm: (head.z - this.headPt.z) * 1000 };
+    const [a, b] = this.cfg.cobbSegments; // 전만각에 들어가는 분절(관절 번호 범위)
+    const cobb = this.baseLordosis - ang.slice(a, b).reduce((x, y) => x + y, 0);
+    const ref = this.headPt.clone().applyMatrix4(this.mats[this.mats.length - 1]);
+    return { cobb, forwardMm: (ref.z - this.headPt.z) * 1000, angles: ang };
   }
 }

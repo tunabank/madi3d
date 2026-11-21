@@ -8,6 +8,8 @@
 const SUBOCCIPITAL = ['Rectus_posterior_major_capitis_muscle', 'Rectus_posterior_minor_capitis_muscle',
   'Obliquus_superior_capitis_muscle', 'Obliquus_inferior_capitis_muscle'];
 const both = (ids) => ids.flatMap(id => [id, `${id}_L`]);
+// 숙인 만큼 머리-C2에서 젖혀 앞을 보게 (머리-C1 60%, C1-C2 40%)
+const withGaze = (a) => { const sum = a.reduce((x, y) => x + y, 0); return [...a, -sum * 0.4, -sum * 0.6]; };
 
 const PRESETS = [
   {
@@ -100,7 +102,21 @@ export default {
     fixed: ['Vertebra_T1', 'Vertebra_T2', 'Vertebra_T3', 'Manubrium_of_sternum', 'Clavicle', 'Clavicle_L', 'First_rib', 'First_rib_L'],
     cobbUpper: 'Intervertebral_disc_C2-C3',
     cobbLower: 'Intervertebral_disc_C7-T1',
+    cobbSegments: [1, 6], // C6-7 ~ C2-3 관절
     headRef: 'Sphenoid_bone',
+    // 관절 순서: C7-T1, C6-C7, C5-C6, C4-C5, C3-C4, C2-C3, C1-C2, 머리-C1 (+ = 앞으로 숙임)
+    // L = 이 모델의 정상 C2-C7 전만각
+    poses: [
+      { id: 'normal', label: '정상', angles: () => [0, 0, 0, 0, 0, 0, 0, 0] },
+      // 일자목: C2-C7 전만을 0°로 (각 분절을 고르게 숙임), 시선 유지를 위해 머리-C2에서 그만큼 젖힘
+      { id: 'straight', label: '일자목', angles: (L) => withGaze([0, L / 5, L / 5, L / 5, L / 5, L / 5]) },
+      // 거북목: 중·하부 경추를 더 숙이고(+C7-T1), 상부 경추(머리-C2)에서 젖혀 시선을 유지
+      { id: 'forward', label: '거북목', angles: (L) => withGaze([10, L / 5 + 4, L / 5 + 4, L / 5 + 2, L / 5, L / 5 - 2]) },
+    ],
+    readout: ({ cobb, forwardMm }) => [
+      cobb >= 0.5 ? `경추 전만각 ${cobb.toFixed(0)}°` : cobb <= -0.5 ? `경추 후만 ${(-cobb).toFixed(0)}°` : '경추 곡선 0° (일자)',
+      forwardMm > 1 ? `머리 앞으로 +${forwardMm.toFixed(0)}mm` : '머리 위치 정상',
+    ],
   },
   presets: PRESETS,
 };

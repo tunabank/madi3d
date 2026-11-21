@@ -51,7 +51,8 @@ function baseColor(layer, mat) {
   if (/^(Bone|Suture)/.test(mat)) return 0xeadfc8;
   if (mat === 'Teeth') return 0xf6f3ea;
   if (/^(Teeth-roots|Dentine)/.test(mat)) return 0xe8dcc0;
-  if (mat === 'White matter') return 0xf2d675; // 척수(신경)
+  if (mat === 'White matter' || mat === 'Fascia') return 0xf2d675; // 척수·신경 주머니
+  if (mat === 'Nerve') return 0xf5c542;
   if (mat === 'Cartilage') return 0x8ec9e6;
   if (mat === 'Tendon') return 0xe6dfcb;
   if (mat === 'Ligament') return 0xd9c27a;
@@ -212,7 +213,7 @@ function applyPreset(p) {
   if (p) {
     state.stage = p.stage;
     lookFrom(p.view, p.dist);
-    if (p.posture && state.region.posture) poseTo(POSE_T[p.posture]);
+    if (p.posture && state.region.posture) poseTo(Math.max(0, poseIndex(p.posture)));
     showInfo(p.title, p.sub, p.desc);
   } else hideInfo();
   refresh();
@@ -259,9 +260,9 @@ async function selectRegion(id) {
     b.onclick = () => applyPreset(state.preset?.id === p.id ? null : p);
     list.appendChild(b);
   }
-  // 자세 패널 (목만)
+  // 자세 패널 (척추 부위만)
   postureEl.classList.toggle('hidden', !R.posture);
-  if (R.posture) { poseQueue = []; setPose(0); }
+  if (R.posture) buildPosePanel(R);
 
   // 층 버튼 이름: 인대 층에 무엇이 들어있는지 부위마다 다름 (무릎=연골판, 어깨=관절낭, 목=디스크)
   document.querySelector('#stageSeg [data-stage="2"]').textContent = cfg.ligamentLabel || '인대';
@@ -275,19 +276,34 @@ async function selectRegion(id) {
   refresh();
 }
 
-// ---------- 자세 애니메이션 (목) ----------
-const POSE_T = { normal: 0, straight: 1, forward: 2 };
+// ---------- 자세 애니메이션 (목·허리) ----------
 const postureEl = document.getElementById('posturePanel');
 const slider = document.getElementById('poseSlider');
 let poseQueue = []; // [{ to, hold }] 차례로 이동
+const poseIndex = (id) => state.region.cfg.posture.poses.findIndex(p => p.id === id);
+
+function buildPosePanel(R) {
+  const poses = R.cfg.posture.poses;
+  const seg = document.getElementById('poseSeg');
+  seg.innerHTML = '';
+  poses.forEach((p, i) => {
+    const b = document.createElement('button');
+    b.textContent = p.label; b.dataset.pose = i;
+    b.onclick = () => poseTo(i);
+    seg.appendChild(b);
+  });
+  slider.max = poses.length - 1;
+  document.getElementById('posePlay').textContent = '▶ ' + poses.map(p => p.label).join(' → ');
+  poseQueue = []; setPose(0);
+}
 function setPose(t) {
   const P = state.region?.posture; if (!P) return;
-  const { cobb, forwardMm } = P.apply(t);
+  const r = P.apply(t);
   slider.value = t;
-  document.getElementById('cobbVal').textContent =
-    cobb >= 0.5 ? `경추 전만각 ${cobb.toFixed(0)}°` : cobb <= -0.5 ? `경추 후만 ${(-cobb).toFixed(0)}°` : '경추 곡선 0° (일자)';
-  document.getElementById('fwdVal').textContent = forwardMm > 1 ? `머리 앞으로 +${forwardMm.toFixed(0)}mm` : '머리 위치 정상';
-  document.querySelectorAll('#poseSeg button').forEach(b => b.classList.toggle('on', Math.abs(+b.dataset.pose - t) < 0.01));
+  const [a, b] = state.region.cfg.posture.readout(r);
+  document.getElementById('cobbVal').textContent = a;
+  document.getElementById('fwdVal').textContent = b;
+  document.querySelectorAll('#poseSeg button').forEach(btn => btn.classList.toggle('on', Math.abs(+btn.dataset.pose - t) < 0.01));
 }
 function poseTo(t) { poseQueue = [{ to: t, hold: 0 }]; }
 function stepPose(dt) {
@@ -301,11 +317,11 @@ function stepPose(dt) {
   const next = P.t + Math.sign(q.to - P.t) * Math.min(Math.abs(q.to - P.t), speed * dt);
   setPose(next);
 }
-document.querySelectorAll('#poseSeg button').forEach(b => b.onclick = () => poseTo(+b.dataset.pose));
 slider.oninput = () => { poseQueue = []; setPose(+slider.value); };
 document.getElementById('posePlay').onclick = () => {
   setPose(0);
-  poseQueue = [{ to: 0, hold: 0.6 }, { to: 1, hold: 1.2 }, { to: 2, hold: 0 }];
+  const n = state.region.cfg.posture.poses.length;
+  poseQueue = Array.from({ length: n }, (_, i) => ({ to: i, hold: i === 0 ? 0.6 : 1.2 }));
 };
 
 // ---------- 컨트롤 ----------
