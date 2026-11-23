@@ -4,6 +4,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { REGIONS } from './regions/index.js';
 import { Posture } from './posture.js';
+import { Motion } from './motion.js';
 
 const BASE = import.meta.env.BASE_URL;
 const LAYERS = ['muscle_sup', 'muscle_deep', 'ligament', 'bone']; // 바깥 → 안
@@ -121,7 +122,9 @@ async function loadRegion(cfg) {
   gltf.scene.visible = false;
   scene.add(gltf.scene);
   const r = { cfg, group: gltf.scene, parts, meshes, center, planes, softIds: new Set(cfg.soft || []) };
-  if (cfg.posture) r.posture = new Posture(r);
+  // 애니메이션: 척추 자세(목·허리) 또는 관절 움직임(어깨 외전 등) — 같은 패널로 조작
+  if (cfg.posture) { r.anim = new Posture(r); r.animCfg = cfg.posture; }
+  else if (cfg.motion) { r.anim = new Motion(r); r.animCfg = cfg.motion; }
   loaded.set(cfg.id, r);
   loadingEl.classList.add('hidden');
   return r;
@@ -132,6 +135,7 @@ function refresh() {
   const R = state.region; if (!R) return;
   const pr = state.preset;
   const hi = new Set(pr?.highlight || []);
+  if (R.anim?.hotActive) for (const id of R.anim.hotIds) hi.add(id); // 움직임 중 통증 구간이면 빨갛게
   const hiMat = pr?.highlightMaterial || null;
   const hide = new Set(pr?.hide || []);
   const ghost = new Set(pr?.ghost || []);
@@ -218,7 +222,8 @@ function applyPreset(p) {
   if (p) {
     state.stage = p.stage;
     lookFrom(p.view, p.dist);
-    if (p.posture && state.region.posture) poseTo(Math.max(0, poseIndex(p.posture)));
+    if (p.posture && state.region.anim) poseTo(Math.max(0, poseIndex(p.posture)));
+    if (p.motion === 'play' && state.region.anim) playAnim();
     showInfo(p.title, p.sub, p.desc, p.en);
   } else hideInfo();
   refresh();
@@ -266,8 +271,8 @@ async function selectRegion(id) {
     list.appendChild(b);
   }
   // 자세 패널 (척추 부위만)
-  postureEl.classList.toggle('hidden', !R.posture);
-  if (R.posture) buildPosePanel(R);
+  postureEl.classList.toggle('hidden', !R.anim);
+  if (R.anim) buildPosePanel(R);
 
   // 층 버튼 이름: 인대 층에 무엇이 들어있는지 부위마다 다름 (무릎=연골판, 어깨=관절낭, 목=디스크)
   document.querySelector('#stageSeg [data-stage="2"]').textContent = cfg.ligamentLabel || '인대';
@@ -281,14 +286,15 @@ async function selectRegion(id) {
   refresh();
 }
 
-// ---------- 자세 애니메이션 (목·허리) ----------
+// ---------- 자세·움직임 애니메이션 (목·허리 자세, 어깨 외전 등) ----------
 const postureEl = document.getElementById('posturePanel');
 const slider = document.getElementById('poseSlider');
 let poseQueue = []; // [{ to, hold }] 차례로 이동
-const poseIndex = (id) => state.region.cfg.posture.poses.findIndex(p => p.id === id);
+const poseIndex = (id) => state.region.animCfg.poses.findIndex(p => p.id === id);
 
 function buildPosePanel(R) {
-  const poses = R.cfg.posture.poses;
+  const poses = R.animCfg.poses;
+  postureEl.querySelector('.label').textContent = R.animCfg.panelTitle || '자세 보기';
   const seg = document.getElementById('poseSeg');
   seg.innerHTML = '';
   poses.forEach((p, i) => {
@@ -302,31 +308,35 @@ function buildPosePanel(R) {
   poseQueue = []; setPose(0);
 }
 function setPose(t) {
-  const P = state.region?.posture; if (!P) return;
+  const P = state.region?.anim; if (!P) return;
+  const wasHot = P.hotActive;
   const r = P.apply(t);
+  if (P.hotActive !== wasHot) refresh();
   slider.value = t;
-  const [a, b] = state.region.cfg.posture.readout(r);
+  const [a, b] = state.region.animCfg.readout(r);
   document.getElementById('cobbVal').textContent = a;
   document.getElementById('fwdVal').textContent = b;
   document.querySelectorAll('#poseSeg button').forEach(btn => btn.classList.toggle('on', Math.abs(+btn.dataset.pose - t) < 0.01));
 }
 function poseTo(t) { poseQueue = [{ to: t, hold: 0 }]; }
 function stepPose(dt) {
-  const P = state.region?.posture; if (!P || !poseQueue.length) return;
+  const P = state.region?.anim; if (!P || !poseQueue.length) return;
   const q = poseQueue[0];
   if (Math.abs(P.t - q.to) < 1e-3) {
     q.hold -= dt; if (q.hold <= 0) poseQueue.shift();
     return;
   }
-  const speed = 0.6; // 초당 자세 단계
+  const speed = state.region.animCfg.playSpeed ?? 0.6; // 초당 자세 단계
   const next = P.t + Math.sign(q.to - P.t) * Math.min(Math.abs(q.to - P.t), speed * dt);
   setPose(next);
 }
 slider.oninput = () => { poseQueue = []; setPose(+slider.value); };
-document.getElementById('posePlay').onclick = () => {
+document.getElementById('posePlay').onclick = () => playAnim();
+function playAnim() {
   setPose(0);
-  const n = state.region.cfg.posture.poses.length;
-  poseQueue = Array.from({ length: n }, (_, i) => ({ to: i, hold: i === 0 ? 0.6 : 1.2 }));
+  const C = state.region.animCfg, n = C.poses.length;
+  poseQueue = Array.from({ length: n }, (_, i) => ({ to: i, hold: i === 0 ? 0.6 : C.playHold ?? 1.2 }));
+  if (C.playBack) poseQueue.push({ to: 0, hold: 0 }); // 올렸다가 다시 내리기
 };
 
 // ---------- 컨트롤 ----------
@@ -343,7 +353,7 @@ termBtn.onclick = () => {
 };
 document.getElementById('resetBtn').onclick = () => {
   state.stage = 0; state.preset = null; state.selected = null; hideInfo(); refresh();
-  if (state.region.posture) poseTo(0);
+  if (state.region.anim) poseTo(0);
   lookFrom(state.region.cfg.views[0][1]);
 };
 const credit = document.getElementById('credit');
@@ -387,4 +397,4 @@ if (import.meta.env.PROD && !import.meta.env.VITE_MODEL_JSON && 'serviceWorker' 
 }
 
 // 테스트·디버그용
-window.__madi = { state, applyPreset, selectRegion, refresh, lookFrom, REGIONS, setPose, ready: true };
+window.__madi = { state, applyPreset, selectRegion, refresh, lookFrom, REGIONS, setPose: (t) => { poseQueue = []; setPose(t); }, ready: true };

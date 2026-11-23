@@ -9,7 +9,7 @@ import * as THREE from 'three';
 const AX = new THREE.Vector3(1, 0, 0); // 좌우 축 (+각도 = 앞으로 숙임)
 
 // 압축된(정수형) 좌표를 실수형 월드 좌표로 바꿔서, 직접 정점을 움직일 수 있게 한다.
-function bakeToWorld(mesh, root) {
+export function bakeToWorld(mesh, root) {
   mesh.updateWorldMatrix(true, false);
   const g = mesh.geometry;
   const pos = g.attributes.position, nor = g.attributes.normal;

@@ -34,12 +34,16 @@ const PRESETS = [
     id: 'impingement',
     en: 'Subacromial impingement syndrome',
     title: '어깨 충돌 증후군',
-    sub: '견봉하 충돌 증후군',
+    sub: '견봉하 충돌 증후군 · 팔 들기 애니메이션',
     stage: 1,
-    highlight: ['Supraspinatus_muscle', 'Subacromial_bursa', 'Subdeltoid_bursa', 'Coraco-acromial_ligament'],
-    view: [-1, 0.45, 0.45],
-    dist: 0.6,
-    desc: '어깨 지붕(견봉과 오구견봉인대) 아래 좁은 공간을 극상근 힘줄과 물주머니(점액낭)가 지나가요. 팔을 들 때 이 공간에서 힘줄과 물주머니가 끼이고 부딪히면서 염증과 통증이 생겨요.',
+    motion: 'play', // 누르면 팔 옆으로 들기 애니메이션 재생
+    noGhost: true, // 삼각근 등 겉근육은 흐리게도 남기지 않음 (팔을 들 때 크게 늘어나 화면을 가림)
+    hide: ['Serratus_anterior_muscle', 'Pectoralis_minor_muscle', 'Rhomboid_major_muscle', 'Rhomboid_minor_muscle',
+      'Levator_scapulae', 'Teres_major_muscle', 'Coracobrachialis_muscle', 'Medial_head_of_triceps_brachii'],
+    highlight: ['Coraco-acromial_ligament'],
+    view: [-0.8, 0.3, 0.65],
+    dist: 0.62,
+    desc: '어깨 지붕(견봉과 오구견봉인대) 아래 좁은 공간을 극상근 힘줄과 물주머니(점액낭)가 지나가요. 팔을 옆으로 들면 이 공간이 좁아지는데, 60~120° 구간에서 힘줄이 지붕에 눌리며 아픈 것이 특징이에요(빨갛게 변하는 구간). 그보다 덜 들거나 더 들면 덜 아파요.',
   },
   {
     id: 'frozen',
@@ -104,5 +108,24 @@ export default {
   ],
   // 평소에 반투명으로 보여줄 구조물(안쪽을 가리는 관절낭)
   soft: ['Articular_capsule_of_glenohumeral_joint'],
+  // 팔 옆으로 들기(외전) 애니메이션 — 견갑골은 고정하고 위팔뼈만 돌림(어깨뼈 회전은 생략)
+  motion: {
+    panelTitle: '팔 옆으로 들기',
+    moving: 'Humerus',
+    fixed: ['Scapula', 'Clavicle'],
+    pivot: { socket: 'Glenoid_labrum', radius: 0.025 }, // 관절와 중심에서 위팔뼈 머리 중심까지
+    axis: [0, 0, -1], // 앞뒤 축, 오른팔이 바깥(-x)으로 올라가는 방향
+    poses: [0, 30, 60, 90, 120].map(deg => ({ label: `${deg}°`, deg })), // 30° 간격이라 재생 속도가 일정
+    playBack: true, // 올렸다가 다시 내리기
+    playHold: 0.1,
+    playSpeed: 0.8, // 초당 단계 수 (30°×0.8 = 초당 24°)
+    // 통증 구간(painful arc): 이 각도에서 극상근·점액낭을 빨갛게
+    hot: { from: 60, to: 120, ids: ['Supraspinatus_muscle', 'Subacromial_bursa', 'Subdeltoid_bursa'] },
+    // 견봉-위팔뼈 간격(gap) 숫자는 이 모델에서 근사치가 맞지 않아 표시하지 않음
+    readout: ({ deg, hot }) => [
+      `팔 든 각도 ${deg.toFixed(0)}°`,
+      hot ? '통증 구간 (60~120°)' : deg < 60 ? '여유 있는 구간' : '통증 구간 지남',
+    ],
+  },
   presets: PRESETS,
 };
